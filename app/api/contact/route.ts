@@ -56,26 +56,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create the data directory if it doesn't exist
-    const dataDir = path.join(process.cwd(), "data");
-    try {
-      await fs.access(dataDir);
-    } catch {
-      await fs.mkdir(dataDir, { recursive: true });
-    }
-
-    // Read existing data or create empty array
-    const filePath = path.join(dataDir, "contacts.json");
-    let contacts = [];
-
-    try {
-      const fileContent = await fs.readFile(filePath, "utf-8");
-      contacts = JSON.parse(fileContent);
-    } catch {
-      // File doesn't exist yet, start with empty array
-      contacts = [];
-    }
-
     // Add new contact with timestamp and ID
     const newContact = {
       id: Date.now().toString(),
@@ -83,13 +63,38 @@ export async function POST(request: NextRequest) {
       submittedAt: new Date().toISOString(),
     };
 
-    contacts.push(newContact);
-
-    // Write updated data back to file
-    await fs.writeFile(filePath, JSON.stringify(contacts, null, 2), "utf-8");
-
-    // Also save to Google Sheets
+    // Save to Google Sheets (primary storage for serverless)
     const sheetSuccess = await appendToGoogleSheet(newContact);
+
+    if (!sheetSuccess) {
+      return NextResponse.json(
+        { error: "Failed to save to Google Sheets. Please check your environment variables." },
+        { status: 500 }
+      );
+    }
+
+    // Try to save to local file (only works in development/local environments)
+    // This will gracefully fail on serverless platforms like Netlify
+    try {
+      const dataDir = path.join(process.cwd(), "data");
+      await fs.mkdir(dataDir, { recursive: true });
+      
+      const filePath = path.join(dataDir, "contacts.json");
+      let contacts = [];
+      
+      try {
+        const fileContent = await fs.readFile(filePath, "utf-8");
+        contacts = JSON.parse(fileContent);
+      } catch {
+        contacts = [];
+      }
+      
+      contacts.push(newContact);
+      await fs.writeFile(filePath, JSON.stringify(contacts, null, 2), "utf-8");
+    } catch (fileError) {
+      // Silently fail for serverless environments - Google Sheets is the primary storage
+      console.log("Local file write skipped (serverless environment)");
+    }
 
     return NextResponse.json(
       {
