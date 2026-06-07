@@ -1,5 +1,8 @@
 import { ClockIcon, ShieldIcon, MessageCircleIcon, AwardIcon } from "@/components/icons"
+import { Button } from "@/components/ui/button"
+import { SectionLabel } from "@/components/section-label"
 import Image from "next/image"
+import Link from "next/link"
 
 const benefits = [
   {
@@ -14,21 +17,21 @@ const benefits = [
   },
   {
     icon: AwardIcon,
-    title: "Technology-Driven Accounting Solutions",
-    description: "Modern tools and processes that give you real-time insights and control.",
+    title: "Technology-Driven Solutions",
+    description: "Modern tools that give you real-time insights — not outdated spreadsheets.",
   },
   {
     icon: ShieldIcon,
-    title: "Experienced Chartered Professionals",
-    description: "15+ years of expertise serving individuals and businesses across India.",
+    title: "Experienced Professionals",
+    description: "Skilled professionals dedicated to serving individuals and businesses across India and the USA.",
   },
 ]
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="border-b bg-muted/50 py-16 md:py-24">
+    <section id="about" className="border-b bg-gradient-to-b from-background to-primary/5 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border shadow-lg">
               <Image
@@ -38,7 +41,7 @@ export function WhyChooseUs() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 rounded-lg border bg-card p-6 shadow-xl">
+            <div className="absolute -bottom-6 -right-6 rounded-xl border border-primary/20 bg-card p-6 shadow-xl">
               <div className="text-center">
                 <p className="text-3xl font-bold text-primary">500+</p>
                 <p className="text-sm text-muted-foreground">Happy Clients</p>
@@ -47,10 +50,13 @@ export function WhyChooseUs() {
           </div>
 
           <div className="order-1 lg:order-2">
+            <SectionLabel>Why GAATSCO</SectionLabel>
             <div className="mb-8">
-              <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">Why Choose GAATSCO</h2>
+              <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">
+                A partner who actually cares about your success
+              </h2>
               <p className="text-pretty text-muted-foreground md:text-lg">
-                We're more than just accountants—we're your trusted financial partners
+                We&apos;re not here to just file forms — we&apos;re here to remove the weight of financial worry from your shoulders.
               </p>
             </div>
 
@@ -59,7 +65,7 @@ export function WhyChooseUs() {
                 const Icon = benefit.icon
                 return (
                   <div key={index} className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-sm">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
@@ -69,6 +75,14 @@ export function WhyChooseUs() {
                   </div>
                 )
               })}
+            </div>
+
+            <div className="mt-8">
+              <Link href="/contact">
+                <Button size="lg" className="shadow-md shadow-primary/20">
+                  See how we can help you
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

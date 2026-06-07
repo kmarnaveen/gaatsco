@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { FloatingCTA } from "@/components/floating-cta";
 
 // Updated fonts to Inter for professional look
 const inter = Inter({ subsets: ["latin"] });
@@ -77,8 +78,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#3b82f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#1e3a5f" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -95,6 +96,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans antialiased`}>
         {children}
+        <FloatingCTA />
         <Toaster />
       </body>
     </html>

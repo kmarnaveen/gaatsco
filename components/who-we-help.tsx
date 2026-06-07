@@ -1,41 +1,45 @@
 import { BuildingIcon, BriefcaseIcon, UsersIcon, PlaneIcon } from "@/components/icons"
+import { SectionLabel } from "@/components/section-label"
 import Image from "next/image"
 
 const clients = [
   {
     icon: UsersIcon,
     title: "Individuals",
-    description: "Personal tax returns, investment planning, and financial advisory",
+    description: "Sleep easy knowing your taxes and investments are handled correctly",
     image: "/professional-individual-reviewing-financial-docume.jpg",
   },
   {
     icon: BriefcaseIcon,
     title: "Startups",
-    description: "Company registration, compliance, and growth advisory",
+    description: "Launch with clean books and compliance from day one — no scrambling later",
     image: "/startup-founders-celebrating-success-in-modern-off.jpg",
   },
   {
     icon: BuildingIcon,
     title: "SMEs",
-    description: "Complete accounting, bookkeeping, and CFO services",
+    description: "Scale without the financial chaos — we grow with you",
     image: "/small-business-owner-managing-finances-in-contempo.jpg",
   },
   {
     icon: PlaneIcon,
     title: "NRIs",
-    description: "NRI taxation, rental property accounting, and repatriation",
+    description: "Manage India finances from anywhere — we bridge the distance",
     image: "/global-professional-working-remotely-with-document.jpg",
   },
 ]
 
 export function WhoWeHelp() {
   return (
-    <section className="border-b bg-muted/30 py-16 md:py-24">
+    <section className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">Who We Help</h2>
+          <SectionLabel>Who We Serve</SectionLabel>
+          <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">
+            Built for people like you
+          </h2>
           <p className="mx-auto max-w-2xl text-pretty text-muted-foreground md:text-lg">
-            Tailored financial solutions for every stage of your journey
+            Whether you&apos;re just starting out or managing complex cross-border finances — we&apos;ve got your back.
           </p>
         </div>
 
@@ -45,14 +49,14 @@ export function WhoWeHelp() {
             return (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:border-accent hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border bg-card transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-muted">
                   <Image
                     src={client.image || "/placeholder.svg"}
                     alt={`${client.title} - GAATSCO Services`}
                     fill
-                    className="object-cover transition-transform group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

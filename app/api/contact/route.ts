@@ -49,9 +49,9 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     const { name, phone, email, service, message } = data;
 
-    if (!name || !phone || !email || !service || !message) {
+    if (!name || !phone || !email || !service) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "Name, phone, email, and service are required" },
         { status: 400 }
       );
     }

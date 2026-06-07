@@ -4,9 +4,9 @@ import { Services } from "@/components/services"
 import { CTA } from "@/components/cta"
 
 export const metadata = {
-  title: "Our Services | GAATSCO Pvt Ltd - Tax, Accounting & Business Advisory",
+  title: "Our Services | GAATSCO Pvt Ltd - Tax, Audit, Accounting & Financial Services",
   description:
-    "Explore comprehensive financial services including tax compliance, GST registration, bookkeeping, business advisory, and specialized solutions for individuals, startups, and SMEs.",
+    "Explore GAATSCO services including India and US taxation, audit support, accounting, payroll management, and financial statement services.",
 }
 
 export default function ServicesPage() {

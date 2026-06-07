@@ -4,12 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "@/components/icons";
-import { useState } from "react";
+import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "@/components/icons";
+import { SectionLabel } from "@/components/section-label";
+import { indiaOffice, usaOffice } from "@/lib/addresses";
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
 import { toast } from "sonner";
 
-export function CTA() {
+const serviceOptions = [
+  "Audit Support Services",
+  "India Taxation Services",
+  "US Taxation Services",
+  "Accounting",
+  "Payroll Management",
+  "Financial Statement Preparation",
+  "Financial Statement Services",
+  "Not Sure - Need Consultation",
+];
+
+function CTAForm() {
+  const searchParams = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+
+  useEffect(() => {
+    const service = searchParams.get("service");
+    if (service && serviceOptions.includes(service)) {
+      setSelectedService(service);
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,6 +63,7 @@ export function CTA() {
           description: "We'll get back to you within 24 hours.",
         });
         e.currentTarget.reset();
+        setSelectedService("");
       } else {
         toast.error("Failed to send message", {
           description: result.error || "Please try again later.",
@@ -56,16 +80,16 @@ export function CTA() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-linear-to-b from-background to-muted/30"
+      className="py-16 md:py-24 bg-gradient-to-b from-primary/5 via-background to-primary/5"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-16 text-center">
+          <SectionLabel>Get Started</SectionLabel>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-balance md:text-4xl lg:text-5xl">
-            Get in Touch with GAATSCO
+            Let&apos;s make finances feel easy again
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Whether you need help with tax filings, accounting, or business
-            advisory, our expert team is ready to assist you.
+            Reach out today — most clients hear back within a few hours. No pressure, just a friendly conversation.
           </p>
         </div>
         {/* </CHANGE> */}
@@ -103,20 +127,12 @@ export function CTA() {
                 </div>
                 <div className="flex-1">
                   <h3 className="mb-2 text-lg font-semibold">Email Us</h3>
-                  <div className="space-y-1">
-                    <a
-                      href="mailto:mdkashif@gaatsco.com"
-                      className="block text-base font-medium text-foreground transition-colors hover:text-primary"
-                    >
-                      mdkashif@gaatsco.com
-                    </a>
-                    <a
-                      href="mailto:info@gaatsco.com"
-                      className="block text-base font-medium text-foreground transition-colors hover:text-primary"
-                    >
-                      info@gaatsco.com
-                    </a>
-                  </div>
+                  <a
+                    href="mailto:info@gaatsco.com"
+                    className="block text-base font-medium text-foreground transition-colors hover:text-primary"
+                  >
+                    info@gaatsco.com
+                  </a>
                   <p className="mt-2 text-sm text-muted-foreground">
                     We'll respond within 24 hours
                   </p>
@@ -147,34 +163,58 @@ export function CTA() {
               </div>
             </div>
 
-            {/* Office Address Card */}
+            {/* India Office */}
             <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
               <div className="flex items-start gap-4">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <MapPinIcon className="h-6 w-6" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">Office Address</h3>
+                  <h3 className="mb-2 text-lg font-semibold">{indiaOffice.label}</h3>
                   <a
-                    href="https://maps.google.com/?q=8-1-2111+Ground+Floor+Toli+Chowki+Hyderabad+Telangana+India+500008"
+                    href={`https://maps.google.com/?q=${indiaOffice.mapsQuery}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group/link block text-base leading-relaxed text-foreground transition-colors hover:text-primary"
                   >
-                    <span className="font-medium">
-                      8-1-2111 Ground Floor, Toli Chowki
-                    </span>
-                    <br />
-                    <span>Hyderabad, Telangana - 500008</span>
-                    <br />
-                    <span>India</span>
+                    {indiaOffice.lines.map((line, i) => (
+                      <span key={i} className={i === 0 ? "font-medium" : undefined}>
+                        {line}
+                        {i < indiaOffice.lines.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* USA Office */}
+            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
+              <div className="flex items-start gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <MapPinIcon className="h-6 w-6" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="mb-2 text-lg font-semibold">{usaOffice.label}</h3>
+                  <a
+                    href={`https://maps.google.com/?q=${usaOffice.mapsQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link block text-base leading-relaxed text-foreground transition-colors hover:text-primary"
+                  >
+                    {usaOffice.lines.map((line, i) => (
+                      <span key={i} className={i === 0 ? "font-medium" : undefined}>
+                        {line}
+                        {i < usaOffice.lines.length - 1 && <br />}
+                      </span>
+                    ))}
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Trust Badge */}
-            <div className="rounded-xl border bg-primary/5 p-6 text-center">
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
               <p className="text-base italic leading-relaxed text-foreground">
                 "Your trusted partner in tax, accounting, and financial
                 success."
@@ -184,13 +224,13 @@ export function CTA() {
           {/* </CHANGE> */}
 
           <div className="rounded-xl border bg-card p-8 shadow-lg lg:p-10">
-            <div className="mb-8">
-              <h3 className="mb-2 text-2xl font-bold">Send Us a Message</h3>
+            <div className="mb-6">
+              <h3 className="mb-2 text-2xl font-bold">Send us a message</h3>
               <p className="text-sm text-muted-foreground">
-                Fill out the form and we'll get back to you shortly
+                Just 4 quick fields — we&apos;ll take it from there
               </p>
             </div>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name *</Label>
@@ -230,45 +270,61 @@ export function CTA() {
                   id="service"
                   name="service"
                   required
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
                   className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <option value="">Select a service...</option>
-                  <option>Tax & Compliance</option>
-                  <option>Accounting & Bookkeeping</option>
-                  <option>Business Advisory</option>
-                  <option>Specialized Services</option>
-                  <option>Not Sure - Need Consultation</option>
+                  {serviceOptions.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
                 </select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Your Message *</Label>
+                <Label htmlFor="message">
+                  Your message <span className="font-normal text-muted-foreground">(optional)</span>
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us about your needs and how we can help you..."
-                  rows={5}
-                  required
+                  placeholder="A sentence or two is enough — we'll ask the rest on our call"
+                  rows={4}
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full"
+                className="w-full shadow-md shadow-primary/20"
                 size="lg"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Send message — we'll reply within 24hrs"}
               </Button>
 
-              <p className="text-center text-xs text-muted-foreground">
-                By submitting this form, you agree to our privacy policy
-              </p>
+              <ul className="space-y-1.5 text-center text-xs text-muted-foreground">
+                <li className="flex items-center justify-center gap-1.5">
+                  <CheckCircleIcon className="h-3.5 w-3.5 text-primary" />
+                  Your information stays confidential
+                </li>
+                <li className="flex items-center justify-center gap-1.5">
+                  <CheckCircleIcon className="h-3.5 w-3.5 text-primary" />
+                  No spam, ever — just a helpful reply
+                </li>
+              </ul>
             </form>
           </div>
           {/* </CHANGE> */}
         </div>
       </div>
     </section>
+  );
+}
+
+export function CTA() {
+  return (
+    <Suspense fallback={null}>
+      <CTAForm />
+    </Suspense>
   );
 }
