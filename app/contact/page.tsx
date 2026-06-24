@@ -5,9 +5,9 @@ import { MapPinIcon } from "@/components/icons"
 import { indiaOffice, usaOffice } from "@/lib/addresses"
 
 export const metadata = {
-  title: "Contact Us | GAATSCO Pvt Ltd - Get Expert Financial Advice",
+  title: "Contact Us | GAATSCO - Get Expert Financial Advice",
   description:
-    "Get in touch with GAATSCO Pvt Ltd for tax, accounting, and business advisory services. Visit our offices in Hyderabad, India or Manchester, USA.",
+    "Get in touch with GAATSCO for tax, accounting, and business advisory services. Visit our offices in Hyderabad, India or Manchester, USA.",
 }
 
 export default function ContactPage() {
@@ -29,7 +29,7 @@ export default function ContactPage() {
                 <div className="grid gap-0 lg:grid-cols-5">
                   <div className="flex flex-col justify-center gap-4 bg-primary p-8 text-primary-foreground lg:col-span-2">
                     <div className="flex items-start gap-3">
-                      <MapPinIcon className="mt-1 h-6 w-6 flex-shrink-0" />
+                      <MapPinIcon className="mt-1 h-6 w-6 shrink-0" />
                       <div>
                         <h3 className="mb-2 text-lg font-semibold">{indiaOffice.label}</h3>
                         <p className="text-sm leading-relaxed opacity-90">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <div className="grid gap-0 lg:grid-cols-5">
                   <div className="flex flex-col justify-center gap-4 bg-primary p-8 text-primary-foreground lg:col-span-2">
                     <div className="flex items-start gap-3">
-                      <MapPinIcon className="mt-1 h-6 w-6 flex-shrink-0" />
+                      <MapPinIcon className="mt-1 h-6 w-6 shrink-0" />
                       <div>
                         <h3 className="mb-2 text-lg font-semibold">{usaOffice.label}</h3>
                         <p className="text-sm leading-relaxed opacity-90">

@@ -18,7 +18,7 @@ export default function Home() {
         <TrustBar />
         <Services />
         <HowItWorks />
-        {/* <WhoWeHelp /> */}
+        <WhoWeHelp />
         <WhyChooseUs />
         <Testimonials />
         <CTA />

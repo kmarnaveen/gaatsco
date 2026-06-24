@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: Props) {
       <Header />
       <main className="flex-1">
         <article>
-          <div className="border-b bg-gradient-to-b from-primary/5 to-background py-12 md:py-16">
+          <div className="border-b bg-linear-to-b from-primary/5 to-background py-12 md:py-16">
             <div className="mx-auto max-w-3xl px-4 md:px-6 lg:px-8">
               <Link
                 href="/blogs"
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-            <div className="relative -mt-6 aspect-[21/9] overflow-hidden rounded-xl border shadow-lg md:-mt-10">
+            <div className="relative -mt-6 aspect-4/3 overflow-hidden rounded-xl border shadow-lg sm:aspect-16/8 md:-mt-10">
               <Image
                 src={blog.image}
                 alt={blog.imageAlt}
@@ -97,14 +97,14 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16 lg:px-8">
             <BlogContent sections={blog.content} />
 
-            <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
+            <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center sm:p-8">
               <h2 className="mb-2 text-xl font-semibold">Need help with {blog.category.toLowerCase()}?</h2>
               <p className="mb-6 text-sm text-muted-foreground">
-                Our team handles this every day for businesses across India and the USA. Start with a free consultation.
+                Our team handles this every day for businesses across India and the USA. Start with a consultation.
               </p>
               <Link href={`/contact?service=${encodeURIComponent(blog.contactService)}`}>
-                <Button size="lg" className="shadow-md shadow-primary/20">
-                  Talk to an expert — it&apos;s free
+                <Button size="lg" className="w-full shadow-md shadow-primary/20 sm:w-auto">
+                  Talk to an expert
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

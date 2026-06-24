@@ -5,7 +5,7 @@ import {
 } from "@/lib/taxation-india"
 
 export const metadata = {
-  title: "India Taxation Services | GAATSCO Pvt Ltd",
+  title: "India Taxation Services | GAATSCO",
   description:
     "Indian tax services including income tax filing, GST compliance, TDS/TCS, corporate tax, tax planning, and assessment support from GAATSCO Hyderabad.",
 }

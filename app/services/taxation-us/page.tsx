@@ -5,7 +5,7 @@ import {
 } from "@/lib/taxation-us"
 
 export const metadata = {
-  title: "US Taxation Services | GAATSCO Pvt Ltd",
+  title: "US Taxation Services | GAATSCO",
   description:
     "US tax preparation and compliance including individual and business returns, federal and state filing, tax planning, payroll taxes, and cross-border NRI support.",
 }

@@ -3,7 +3,7 @@ import { SectionLabel } from "@/components/section-label"
 const testimonials = [
   {
     quote:
-      "I used to dread tax season. GAATSCO handles everything proactively — I haven't missed a deadline in two years. It genuinely feels like having a financial partner, not just an accountant.",
+      "I used to dread tax season. GAATSCO handles everything proactively, and deadlines are never a scramble anymore. It genuinely feels like having a financial partner, not just an accountant.",
     name: "Rajesh K.",
     role: "SME Owner, Hyderabad",
     highlight: "Saved 10+ hours/month",
@@ -13,7 +13,7 @@ const testimonials = [
       "As a startup founder, I needed someone who could move fast and explain things simply. They set up our books, payroll, and compliance in weeks. Clear communication every step of the way.",
     name: "Priya M.",
     role: "Startup Founder, Bangalore",
-    highlight: "Setup in under 3 weeks",
+    highlight: "Rapid and structured onboarding",
   },
   {
     quote:
@@ -26,36 +26,30 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+    <section className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <SectionLabel>Client Stories</SectionLabel>
-          <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-            People like you, already at ease
-          </h2>
-          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground md:text-lg">
-            Real relief from real clients — because trust is earned, not claimed.
-          </p>
-        </div>
+        <div className="rounded-4xl bg-primary px-6 py-10 text-primary-foreground md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel className="text-primary-foreground/85 [&_span]:bg-primary-foreground">Testimonials</SectionLabel>
+            </div>
+            <div className="space-y-6">
+              {testimonials.slice(0, 1).map((t) => (
+                <figure key={t.name}>
+                  <figcaption className="mb-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.08em] text-primary-foreground/80">
+                    <span className="rounded-full border border-primary-foreground/40 px-3 py-1">{t.name}</span>
+                    <span>{t.role}</span>
+                  </figcaption>
+                  <blockquote className="max-w-2xl text-xl leading-tight tracking-tight sm:text-2xl md:text-4xl">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <p className="mt-4 text-sm uppercase tracking-[0.09em] text-primary-foreground/80">{t.highlight}</p>
+                </figure>
+              ))}
+            </div>
+          </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <blockquote className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="border-t pt-4">
-                <span className="mb-1 inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                  {t.highlight}
-                </span>
-                <p className="mt-2 font-semibold text-foreground">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </figcaption>
-            </figure>
-          ))}
+          <p className="mt-16 text-center text-3xl font-semibold tracking-tight sm:text-5xl md:mt-24 md:text-7xl">Let&apos;s talk ↗</p>
         </div>
       </div>
     </section>

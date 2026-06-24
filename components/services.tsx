@@ -1,55 +1,40 @@
 import {
-  FileSearchIcon,
-  CalculatorIcon,
-  UsersIcon,
-  FileTextIcon,
-  TrendingUpIcon,
   ArrowRightIcon,
-  ShieldIcon,
-  PlaneIcon,
 } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
 import { auditSupportSummary } from "@/lib/audit-support"
 import { indiaTaxationSummary } from "@/lib/taxation-india"
 import { usTaxationSummary } from "@/lib/taxation-us"
-import Image from "next/image"
 import Link from "next/link"
 
 const services = [
   {
     id: "audit-support",
-    icon: FileSearchIcon,
     title: auditSupportSummary.title,
     benefit: auditSupportSummary.benefit,
     description: auditSupportSummary.description,
     features: auditSupportSummary.features,
-    image: auditSupportSummary.image,
     detailHref: "/services/audit-support",
   },
   {
     id: indiaTaxationSummary.id,
-    icon: ShieldIcon,
     title: indiaTaxationSummary.title,
     benefit: indiaTaxationSummary.benefit,
     description: indiaTaxationSummary.description,
     features: indiaTaxationSummary.features,
-    image: indiaTaxationSummary.image,
     detailHref: indiaTaxationSummary.detailHref,
   },
   {
     id: usTaxationSummary.id,
-    icon: PlaneIcon,
     title: usTaxationSummary.title,
     benefit: usTaxationSummary.benefit,
     description: usTaxationSummary.description,
     features: usTaxationSummary.features,
-    image: usTaxationSummary.image,
     detailHref: usTaxationSummary.detailHref,
   },
   {
     id: "accounting",
-    icon: CalculatorIcon,
     title: "Accounting",
     benefit: "Always know where your money stands",
     description:
@@ -60,11 +45,9 @@ const services = [
       "Bank reconciliation",
       "Finalisation of accounts",
     ],
-    image: "/accounting-ledger-financial-records-professional-w.jpg",
   },
   {
     id: "payroll-management",
-    icon: UsersIcon,
     title: "Payroll Management",
     benefit: "Your team gets paid right, every time",
     description:
@@ -75,11 +58,9 @@ const services = [
       "Reimbursement and bonus management",
       "Payroll reporting and records",
     ],
-    image: "/business-growth-chart-strategy-meeting-professiona.jpg",
   },
   {
     id: "financial-statement-preparation",
-    icon: FileTextIcon,
     title: "Financial Statement Preparation",
     benefit: "Reports you can trust and share",
     description:
@@ -90,11 +71,9 @@ const services = [
       "Cash flow statement preparation",
       "Notes to accounts and schedules",
     ],
-    image: "/specialized-financial-services-global-professional.jpg",
   },
   {
     id: "financial-statement-services",
-    icon: TrendingUpIcon,
     title: "Financial Statement Services",
     benefit: "Turn numbers into decisions",
     description:
@@ -105,92 +84,68 @@ const services = [
       "Management reporting",
       "Investor and lender-ready financials",
     ],
-    image: "/professional-accounting-team-working-together-in-m.jpg",
   },
 ]
 
 export function Services() {
   return (
-    <section id="services" className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+    <section id="services" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <SectionLabel>What We Offer</SectionLabel>
-          <h2 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Services that give you peace of mind
-          </h2>
-          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground md:text-lg">
-            Every service is designed to remove a worry from your plate — so you can focus on growth.
-          </p>
-        </div>
+        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel>Services & Expertise</SectionLabel>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+                We keep you informed at every step, turning compliance and reporting into clear business momentum.
+              </h2>
+            </div>
+          </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {services.map((service) => {
-            const Icon = service.icon
-            return (
-              <article
-                key={service.id}
-                id={service.id}
-                className="group flex flex-col overflow-hidden rounded-xl border bg-card transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="relative aspect-video w-full overflow-hidden bg-muted">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-8">
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <p className="mb-1 text-sm font-medium text-primary">{service.benefit}</p>
-                  <h3 className="mb-3 text-xl font-semibold">{service.title}</h3>
-                  <p className="mb-4 leading-relaxed text-muted-foreground">{service.description}</p>
-                  <ul className="mb-6 space-y-2 text-sm">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-                    {service.detailHref && (
-                      <Link
-                        href={service.detailHref}
-                        className="inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                      >
-                        View full service
-                        <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    )}
-                    <Link
-                      href={`/contact?service=${encodeURIComponent(service.title)}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                    >
-                      Discuss this service
+          <div className="mt-12 grid gap-7 md:grid-cols-2">
+            {services.map((service) => (
+              <article key={service.id} id={service.id} className="border-t border-[#c8c9e8] pt-5">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <h3 className="pr-2 text-xl font-semibold leading-tight">{service.title}</h3>
+                  {service.detailHref && (
+                    <Link href={service.detailHref} className="mt-1 shrink-0 self-start text-[#4f54cc] transition-colors hover:text-[#262bce]">
                       <ArrowRightIcon className="h-4 w-4" />
                     </Link>
-                  </div>
+                  )}
                 </div>
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-[#6d71d3]">{service.benefit}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#4f54cc] md:text-base">{service.description}</p>
+                <ul className="mt-4 space-y-1.5 text-sm text-[#4f54cc]">
+                  {service.features.slice(0, 3).map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-[#262bce]" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={`/contact?service=${encodeURIComponent(service.title)}`}
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#262bce] transition-colors hover:text-[#4349d7]"
+                >
+                  Discuss this service
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
               </article>
-            )
-          })}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
-          <p className="mb-4 text-lg font-medium text-foreground">
-            Not sure which service you need?
-          </p>
-          <p className="mb-6 text-sm text-muted-foreground">
-            That&apos;s completely fine — most clients start with a free consultation and we figure it out together.
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="shadow-md shadow-primary/20">
-              Talk to an expert — it&apos;s free
-            </Button>
-          </Link>
+          <div className="mt-10 border-t border-[#c8c9e8] pt-8 text-center">
+            <p className="text-lg font-medium text-[#262bce]">Need help choosing the right service mix?</p>
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-[#4f54cc]">
+              Share your stage and goals. We will propose the simplest setup that keeps you compliant and growth-ready.
+            </p>
+            <Link href="/contact" className="mt-5 inline-block">
+              <Button size="lg" className="rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8]">
+                Talk to an expert
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

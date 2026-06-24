@@ -1,19 +1,27 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { FloatingCTA } from "@/components/floating-cta";
 
-// Updated fonts to Inter for professional look
-const inter = Inter({ subsets: ["latin"] });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title:
-    "GAATSCO Pvt Ltd - Expert Accounting, Tax & Business Advisory Services in India",
+    "GAATSCO - Expert Accounting, Tax & Business Advisory Services in India",
   description:
-    "GAATSCO Pvt Ltd offers professional accounting, tax compliance, GST registration, bookkeeping, and business advisory services in Hyderabad. Serving individuals, startups, SMEs, and NRIs across India with innovative financial solutions.",
+    "GAATSCO offers professional accounting, tax compliance, GST registration, bookkeeping, and business advisory services in Hyderabad. Serving individuals, startups, SMEs, and NRIs across India with innovative financial solutions.",
   keywords: [
     "GAATSCO Hyderabad",
     "accounting services India",
@@ -26,23 +34,23 @@ export const metadata: Metadata = {
     "startup accounting",
     "SME financial services",
   ],
-  authors: [{ name: "GAATSCO Pvt Ltd" }],
-  creator: "GAATSCO Pvt Ltd",
-  publisher: "GAATSCO Pvt Ltd",
+  authors: [{ name: "GAATSCO" }],
+  creator: "GAATSCO",
+  publisher: "GAATSCO",
   generator: "v0.app",
   metadataBase: new URL("https://gaatsco.com"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://gaatsco.com",
-    title: "GAATSCO Pvt Ltd - Expert Accounting & Tax Services in India",
+    title: "GAATSCO - Expert Accounting & Tax Services in India",
     description:
       "Professional accounting, tax, and business advisory services for individuals and businesses across India",
-    siteName: "GAATSCO Pvt Ltd",
+    siteName: "GAATSCO",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GAATSCO Pvt Ltd - Accounting & Tax Services",
+    title: "GAATSCO - Accounting & Tax Services",
     description:
       "Expert accounting, tax compliance, and business advisory services in India",
   },
@@ -94,7 +102,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+      >
         {children}
         <FloatingCTA />
         <Toaster />

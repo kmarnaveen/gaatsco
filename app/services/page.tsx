@@ -4,7 +4,7 @@ import { Services } from "@/components/services"
 import { CTA } from "@/components/cta"
 
 export const metadata = {
-  title: "Our Services | GAATSCO Pvt Ltd - Tax, Audit, Accounting & Financial Services",
+  title: "Our Services | GAATSCO - Tax, Audit, Accounting & Financial Services",
   description:
     "Explore GAATSCO services including India and US taxation, audit support, accounting, payroll management, and financial statement services.",
 }

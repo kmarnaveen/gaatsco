@@ -89,5 +89,5 @@ export const auditSupportSummary = {
     "On-site support during audits",
     "Post-audit consultation & follow-up",
   ],
-  image: "/tax-compliance-documents-calculator-professional.jpg",
+  image: "/professional-individual-reviewing-financial-docume.jpg",
 }

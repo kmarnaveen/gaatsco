@@ -5,7 +5,7 @@ const steps = [
     icon: CalendarIcon,
     number: "01",
     title: "Schedule a Call",
-    description: "Book a free consultation at your convenience. We'll discuss your needs and challenges.",
+    description: "Book a consultation at your convenience. We'll discuss your needs and challenges.",
   },
   {
     icon: FileSearchIcon,

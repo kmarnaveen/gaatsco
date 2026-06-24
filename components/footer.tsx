@@ -5,17 +5,16 @@ import { indiaOffice, usaOffice } from "@/lib/addresses";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-gradient-to-b from-primary/5 to-muted/50">
+    <footer className="border-t border-border/60 bg-linear-to-b from-background to-muted/45">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 inline-flex items-center gap-3">
               <Logo className="h-10 w-10 text-primary" />
               <div className="flex flex-col">
-                <span className="text-base font-semibold leading-none tracking-tight">
+                <span className="text-lg font-bold leading-none tracking-tight">
                   GAATSCO
                 </span>
-                <span className="text-xs text-muted-foreground">Pvt Ltd</span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -25,7 +24,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Services</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground/90">Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link
@@ -87,7 +86,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground/90">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link
@@ -125,10 +124,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Contact Us</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground/90">Contact Us</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <MapPinIcon className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                   <p className="font-medium text-foreground">{indiaOffice.label}</p>
                   <a
@@ -142,7 +141,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <MapPinIcon className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                   <p className="font-medium text-foreground">{usaOffice.label}</p>
                   <a
@@ -156,16 +155,16 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-center gap-2">
-                <PhoneIcon className="h-4 w-4 flex-shrink-0" />
+                <PhoneIcon className="h-4 w-4 shrink-0" />
                 <a
-                  href="tel:+919182036699"
+                  href="tel:+918639295812"
                   className="transition-colors hover:text-foreground"
                 >
-                  +91 91820 36699
+                  +91 86392 95812
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <MailIcon className="h-4 w-4 flex-shrink-0" />
+                <MailIcon className="h-4 w-4 shrink-0" />
                 <a
                   href="mailto:info@gaatsco.com"
                   className="transition-colors hover:text-foreground"
@@ -177,11 +176,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8">
+        <div className="mt-12 border-t border-border/60 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row">
             <p>
-              © {new Date().getFullYear()} GAATSCO PRIVATE LIMITED. All rights
-              reserved.
+              © {new Date().getFullYear()} GAATSCO. All rights reserved.
             </p>
           </div>
         </div>

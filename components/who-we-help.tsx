@@ -7,68 +7,69 @@ const clients = [
     icon: UsersIcon,
     title: "Individuals",
     description: "Sleep easy knowing your taxes and investments are handled correctly",
-    image: "/professional-individual-reviewing-financial-docume.jpg",
+    image: "/editorial-consultation-desk.jpg",
   },
   {
     icon: BriefcaseIcon,
     title: "Startups",
     description: "Launch with clean books and compliance from day one — no scrambling later",
-    image: "/startup-founders-celebrating-success-in-modern-off.jpg",
+    image: "/editorial-founder-workspace.jpg",
   },
   {
     icon: BuildingIcon,
     title: "SMEs",
     description: "Scale without the financial chaos — we grow with you",
-    image: "/small-business-owner-managing-finances-in-contempo.jpg",
+    image: "/editorial-office-team.jpg",
   },
   {
     icon: PlaneIcon,
     title: "NRIs",
     description: "Manage India finances from anywhere — we bridge the distance",
-    image: "/global-professional-working-remotely-with-document.jpg",
+    image: "/editorial-global-remote.jpg",
   },
 ]
 
 export function WhoWeHelp() {
   return (
-    <section className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+    <section className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <SectionLabel>Who We Serve</SectionLabel>
-          <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-            Built for people like you
-          </h2>
-          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground md:text-lg">
-            Whether you&apos;re just starting out or managing complex cross-border finances — we&apos;ve got your back.
-          </p>
-        </div>
+        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel>Who We Serve</SectionLabel>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+                Built for founders, teams, and cross-border operators who need clear financial execution.
+              </h2>
+            </div>
+          </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {clients.map((client, index) => {
-            const Icon = client.icon
-            return (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-xl border bg-card transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="relative aspect-video w-full overflow-hidden bg-muted">
-                  <Image
-                    src={client.image || "/placeholder.svg"}
-                    alt={`${client.title} - GAATSCO Services`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="h-6 w-6" />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {clients.map((client, index) => {
+              const Icon = client.icon
+              return (
+                <article key={index} className="overflow-hidden border border-[#c8c9e8] bg-[#f4f4f1]">
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-[#dedfef]">
+                    <Image
+                      src={client.image || "/placeholder.svg"}
+                      alt={`${client.title} - GAATSCO Services`}
+                      fill
+                      className="object-cover grayscale"
+                    />
+                    <div className="absolute inset-0 bg-[#262bce]/12" aria-hidden="true" />
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold">{client.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{client.description}</p>
-                </div>
-              </div>
-            )
-          })}
+                  <div className="p-5">
+                    <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#c8c9e8] text-[#262bce]">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold">{client.title}</h3>
+                    <p className="text-sm leading-relaxed text-[#4f54cc]">{client.description}</p>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

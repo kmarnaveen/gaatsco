@@ -1,82 +1,81 @@
-import { UsersIcon, TargetIcon, AwardIcon, TrendingUpIcon } from "@/components/icons"
-import { Card } from "@/components/ui/card"
+import { SectionLabel } from "@/components/section-label"
+import Image from "next/image"
+
+const metrics = [
+  { value: "96%", label: "Successful engagements" },
+  { value: "24 hours", label: "Average response time" },
+  { value: "1000+", label: "Client consultations" },
+]
+
+const visuals = [
+  {
+    src: "/editorial-briefing-team.jpg",
+    alt: "Executive team in strategy briefing",
+  },
+  {
+    src: "/editorial-legal-documents.jpg",
+    alt: "Close-up of compliance documents and notes",
+  },
+  {
+    src: "/editorial-laptop-doc-review.jpg",
+    alt: "Desk with laptop and document review",
+  },
+]
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-muted/30">
+    <section id="about" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight md:text-5xl mb-4 text-balance">About GAATSCO Pvt Ltd</h2>
-          <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Founded in 2025, GAATSCO is a dynamic accounting and advisory firm committed to empowering businesses with
-            innovative financial solutions and expert guidance.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
-          <Card className="p-6 text-center border-2 hover:border-primary/50 transition-colors">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <TargetIcon className="h-6 w-6 text-primary" />
+        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel>About Us</SectionLabel>
             </div>
-            <h3 className="mb-2 font-semibold">Our Mission</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              To simplify financial management and empower businesses to achieve sustainable growth
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center border-2 hover:border-primary/50 transition-colors">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <AwardIcon className="h-6 w-6 text-primary" />
-            </div>
-            <h3 className="mb-2 font-semibold">Our Vision</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              To be India's most trusted partner for accounting, tax, and business advisory services
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center border-2 hover:border-primary/50 transition-colors">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <UsersIcon className="h-6 w-6 text-primary" />
-            </div>
-            <h3 className="mb-2 font-semibold">Expert Team</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Led by experienced professionals committed to excellence and client success
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center border-2 hover:border-primary/50 transition-colors">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <TrendingUpIcon className="h-6 w-6 text-primary" />
-            </div>
-            <h3 className="mb-2 font-semibold">Innovation First</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Leveraging modern tools and strategies to deliver agile, efficient solutions
-            </p>
-          </Card>
-        </div>
-
-        <div className="rounded-2xl border bg-card p-8 md:p-12">
-          <div className="mx-auto max-w-3xl">
-            <h3 className="text-2xl font-bold mb-6 text-center">Why Choose GAATSCO?</h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                At GAATSCO, we understand that managing finances can be complex and time-consuming. That's why we've
-                built our firm on the principles of{" "}
-                <strong className="text-foreground">agility, innovation, and customer-centricity</strong>.
-              </p>
-              <p>
-                Unlike traditional firms that rely solely on legacy experience, we combine proven expertise with modern
-                approaches to deliver solutions that are fast, efficient, and tailored to your unique needs. Whether
-                you're an individual taxpayer, a startup founder, or a growing business, we're here to simplify your
-                financial journey.
-              </p>
-              <p>
-                Our founding team brings together diverse expertise in accounting, taxation, and business strategy.
-                We're not just service providers—we're partners invested in your success. As a new and dynamic firm,
-                we're nimble enough to adapt quickly to regulatory changes while being focused enough to provide
-                personalized attention to every client.
+            <div>
+              <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+                We accelerate accounting outcomes without compromising accuracy, giving founders more time to lead.
+              </h2>
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#4f54cc] md:text-lg">
+                Founded in 2025, GAATSCO combines compliance depth with execution speed. We simplify books, tax, and
+                reporting into clear decisions that keep your business moving confidently.
               </p>
             </div>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {visuals.map((visual) => (
+              <div key={visual.src} className="relative aspect-16/10 overflow-hidden border border-[#c8c9e8] bg-[#f4f4f1]">
+                <Image
+                  src={visual.src}
+                  alt={visual.alt}
+                  fill
+                  className="object-cover grayscale"
+                />
+                <div className="absolute inset-0 bg-[#262bce]/10" aria-hidden="true" />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="border border-[#c8c9e8] px-6 py-7 text-center">
+                <p className="text-5xl font-semibold leading-none tracking-tight md:text-6xl">{metric.value}</p>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-[#6d71d3]">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 border-t border-[#c8c9e8] pt-8 text-sm leading-relaxed text-[#4f54cc] md:text-base">
+            <p>
+              Our team supports startups, SMEs, and cross-border founders with audit support, taxation, payroll, and
+              advisory. We stay intentionally lean so every client gets senior-level attention and practical execution.
+            </p>
+            <p className="mt-4">
+              You get direct communication, predictable turnaround, and reporting that explains what matters in plain
+              language.
+            </p>
           </div>
         </div>
       </div>

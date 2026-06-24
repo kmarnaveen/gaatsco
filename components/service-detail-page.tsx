@@ -53,7 +53,7 @@ export function ServiceDetailPage({
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="border-b bg-gradient-to-br from-primary/10 via-background to-background py-16 md:py-24">
+        <section className="border-b bg-linear-to-br from-primary/10 via-background to-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
@@ -75,7 +75,7 @@ export function ServiceDetailPage({
                   </Button>
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border shadow-xl">
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl border shadow-xl">
                 <Image src={image} alt={imageAlt} fill className="object-cover" priority />
               </div>
             </div>
@@ -106,7 +106,7 @@ export function ServiceDetailPage({
           </div>
         </section>
 
-        <section className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+        <section className="border-b bg-linear-to-b from-primary/5 to-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <SectionLabel>Why GAATSCO</SectionLabel>
@@ -117,7 +117,7 @@ export function ServiceDetailPage({
                 const Icon = item.icon
                 return (
                   <div key={item.title} className="text-center md:text-left">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground md:mx-0">
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-primary to-primary/80 text-primary-foreground md:mx-0">
                       <Icon className="h-7 w-7" />
                     </div>
                     <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
@@ -135,7 +135,7 @@ export function ServiceDetailPage({
             <p className="mb-8 text-muted-foreground">{closingText}</p>
             <Link href={contactHref}>
               <Button size="lg" className="shadow-md shadow-primary/20">
-                Book a free consultation
+                Book a consultation
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </Link>

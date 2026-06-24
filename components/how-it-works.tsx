@@ -7,7 +7,7 @@ const steps = [
   {
     step: "01",
     icon: CalendarIcon,
-    title: "Book a free call",
+    title: "Book a call",
     description:
       "Share your situation in a relaxed 15-minute chat. No jargon, no pressure — just an honest conversation about what you need.",
     reassurance: "Takes less than 2 minutes to schedule",
@@ -51,7 +51,7 @@ export function HowItWorks() {
               <div key={item.step} className="relative flex flex-col">
                 {index < steps.length - 1 && (
                   <div
-                    className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-gradient-to-r from-primary/30 to-primary/10 md:block"
+                    className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-linear-to-r from-primary/30 to-primary/10 md:block"
                     aria-hidden
                   />
                 )}
@@ -76,7 +76,7 @@ export function HowItWorks() {
         <div className="mt-12 text-center">
           <Link href="/contact">
             <Button size="lg" className="shadow-md shadow-primary/20">
-              Start with a free consultation
+              Start with a consultation
             </Button>
           </Link>
           <p className="mt-3 text-sm text-muted-foreground">

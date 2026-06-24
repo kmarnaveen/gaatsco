@@ -5,9 +5,9 @@ import { WhyChooseUs } from "@/components/why-choose-us"
 import { CTA } from "@/components/cta"
 
 export const metadata = {
-  title: "About Us | GAATSCO Pvt Ltd - Expert Accounting & Tax Services",
+  title: "About Us | GAATSCO - Expert Accounting & Tax Services",
   description:
-    "Learn about GAATSCO Pvt Ltd, a dynamic accounting and advisory firm committed to empowering businesses with innovative financial solutions and expert guidance.",
+    "Learn about GAATSCO, a dynamic accounting and advisory firm committed to empowering businesses with innovative financial solutions and expert guidance.",
 }
 
 export default function AboutPage() {

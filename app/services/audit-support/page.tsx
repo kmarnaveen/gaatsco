@@ -12,7 +12,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Audit Support Services | GAATSCO Pvt Ltd",
+  title: "Audit Support Services | GAATSCO",
   description:
     "Comprehensive audit support services including documentation preparation, compliance review, internal control evaluation, on-site support, and post-audit consultation.",
 }
@@ -22,7 +22,7 @@ export default function AuditSupportPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="border-b bg-gradient-to-br from-primary/10 via-background to-background py-16 md:py-24">
+        <section className="border-b bg-linear-to-br from-primary/10 via-background to-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
@@ -48,9 +48,9 @@ export default function AuditSupportPage() {
                   </Button>
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border shadow-xl">
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl border shadow-xl">
                 <Image
-                  src="/tax-compliance-documents-calculator-professional.jpg"
+                  src="/professional-individual-reviewing-financial-docume.jpg"
                   alt="GAATSCO audit support services"
                   fill
                   className="object-cover"
@@ -93,7 +93,7 @@ export default function AuditSupportPage() {
           </div>
         </section>
 
-        <section className="border-b bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+        <section className="border-b bg-linear-to-b from-primary/5 to-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <SectionLabel>Why GAATSCO</SectionLabel>
@@ -107,7 +107,7 @@ export default function AuditSupportPage() {
                 const Icon = item.icon
                 return (
                   <div key={item.title} className="text-center md:text-left">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground md:mx-0">
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-primary to-primary/80 text-primary-foreground md:mx-0">
                       <Icon className="h-7 w-7" />
                     </div>
                     <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
@@ -128,7 +128,7 @@ export default function AuditSupportPage() {
             </p>
             <Link href="/contact?service=Audit%20Support%20Services">
               <Button size="lg" className="shadow-md shadow-primary/20">
-                Book a free consultation
+                Book a consultation
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </Link>

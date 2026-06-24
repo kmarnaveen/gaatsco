@@ -1,14 +1,13 @@
 import { ClockIcon, ShieldIcon, MessageCircleIcon, AwardIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
-import Image from "next/image"
 import Link from "next/link"
 
 const benefits = [
   {
     icon: ClockIcon,
     title: "Timely & Accurate Compliance",
-    description: "99% on-time filing record. Never miss a deadline or face penalties again.",
+    description: "Consistent on-time filing with proactive deadline tracking and follow-through.",
   },
   {
     icon: MessageCircleIcon,
@@ -29,60 +28,42 @@ const benefits = [
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="border-b bg-gradient-to-b from-background to-primary/5 py-16 md:py-24">
+    <section id="about" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="relative order-2 lg:order-1">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border shadow-lg">
-              <Image
-                src="/professional-accounting-team-meeting-collaboration.jpg"
-                alt="GAATSCO team collaboration"
-                fill
-                className="object-cover"
-              />
+        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel>Why GAATSCO</SectionLabel>
             </div>
-            <div className="absolute -bottom-6 -right-6 rounded-xl border border-primary/20 bg-card p-6 shadow-xl">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-primary">500+</p>
-                <p className="text-sm text-muted-foreground">Happy Clients</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="order-1 lg:order-2">
-            <SectionLabel>Why GAATSCO</SectionLabel>
-            <div className="mb-8">
-              <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-                A partner who actually cares about your success
+            <div>
+              <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
+                A partner built for precision, pace, and plain-language communication.
               </h2>
-              <p className="text-pretty text-muted-foreground md:text-lg">
-                We&apos;re not here to just file forms — we&apos;re here to remove the weight of financial worry from your shoulders.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => {
-                const Icon = benefit.icon
-                return (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-sm">
-                      <Icon className="h-6 w-6" />
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {benefits.map((benefit, index) => {
+                  const Icon = benefit.icon
+                  return (
+                    <div key={index} className="rounded-xl border border-[#c8c9e8] bg-[#f4f4f1] p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c8c9e8] text-[#262bce]">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#3d42c7]">{benefit.title}</h3>
+                      </div>
+                      <p className="mt-3 text-sm leading-relaxed text-[#4f54cc]">{benefit.description}</p>
                     </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">{benefit.title}</h3>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{benefit.description}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+                  )
+                })}
+              </div>
 
-            <div className="mt-8">
-              <Link href="/contact">
-                <Button size="lg" className="shadow-md shadow-primary/20">
-                  See how we can help you
-                </Button>
-              </Link>
+              <div className="mt-8 flex flex-col gap-4 border-t border-[#c8c9e8] pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-[#4f54cc] md:text-base">Strategic support for India and USA operations, startups, and established businesses.</p>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8] sm:w-auto">
+                    See how we can help you
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

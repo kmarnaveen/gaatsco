@@ -1,6 +1,6 @@
 # GAATSCO Website
 
-Next.js website for GAATSCO Pvt Ltd with contact form and Google Sheets integration.
+Next.js website for GAATSCO with contact form and Google Sheets integration.
 
 ## Deploy to Netlify
 

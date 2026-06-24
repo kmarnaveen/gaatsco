@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "@/components/icons";
+import {
+  PhoneIcon,
+  MailIcon,
+  MapPinIcon,
+  ClockIcon,
+  CheckCircleIcon,
+} from "@/components/icons";
 import { SectionLabel } from "@/components/section-label";
 import { indiaOffice, usaOffice } from "@/lib/addresses";
 import { useSearchParams } from "next/navigation";
@@ -69,7 +75,7 @@ function CTAForm() {
           description: result.error || "Please try again later.",
         });
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred", {
         description: "Please check your connection and try again.",
       });
@@ -77,244 +83,166 @@ function CTAForm() {
       setIsSubmitting(false);
     }
   };
+
   return (
-    <section
-      id="contact"
-      className="py-16 md:py-24 bg-gradient-to-b from-primary/5 via-background to-primary/5"
-    >
+    <section id="contact" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <SectionLabel>Get Started</SectionLabel>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-balance md:text-4xl lg:text-5xl">
-            Let&apos;s make finances feel easy again
-          </h2>
-          <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Reach out today — most clients hear back within a few hours. No pressure, just a friendly conversation.
-          </p>
-        </div>
-        {/* </CHANGE> */}
-
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="space-y-6">
-            {/* Phone Card */}
-            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <PhoneIcon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">
-                    Call / WhatsApp
-                  </h3>
-                  <a
-                    href="tel:+919182036699"
-                    className="mb-1 block text-xl font-medium text-foreground transition-colors hover:text-primary"
-                  >
-                    +91 91820 36699
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    Quick response guaranteed
-                  </p>
-                </div>
-              </div>
+        <div className="rounded-4xl bg-primary px-6 py-10 text-primary-foreground md:px-12 md:py-14">
+          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div>
+              <SectionLabel className="text-primary-foreground/85 [&_span]:bg-primary-foreground">Get Started</SectionLabel>
             </div>
-
-            {/* Email Card */}
-            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <MailIcon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">Email Us</h3>
-                  <a
-                    href="mailto:info@gaatsco.com"
-                    className="block text-base font-medium text-foreground transition-colors hover:text-primary"
-                  >
-                    info@gaatsco.com
-                  </a>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    We'll respond within 24 hours
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Business Hours Card */}
-            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <ClockIcon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">Business Hours</h3>
-                  <div className="space-y-1">
-                    <p className="text-base font-medium text-foreground">
-                      Monday – Saturday
-                    </p>
-                    <p className="text-base font-medium text-foreground">
-                      9:00 AM – 6:00 PM
-                    </p>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Closed on Sundays
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* India Office */}
-            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <MapPinIcon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">{indiaOffice.label}</h3>
-                  <a
-                    href={`https://maps.google.com/?q=${indiaOffice.mapsQuery}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/link block text-base leading-relaxed text-foreground transition-colors hover:text-primary"
-                  >
-                    {indiaOffice.lines.map((line, i) => (
-                      <span key={i} className={i === 0 ? "font-medium" : undefined}>
-                        {line}
-                        {i < indiaOffice.lines.length - 1 && <br />}
-                      </span>
-                    ))}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* USA Office */}
-            <div className="group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <MapPinIcon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-lg font-semibold">{usaOffice.label}</h3>
-                  <a
-                    href={`https://maps.google.com/?q=${usaOffice.mapsQuery}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/link block text-base leading-relaxed text-foreground transition-colors hover:text-primary"
-                  >
-                    {usaOffice.lines.map((line, i) => (
-                      <span key={i} className={i === 0 ? "font-medium" : undefined}>
-                        {line}
-                        {i < usaOffice.lines.length - 1 && <br />}
-                      </span>
-                    ))}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Trust Badge */}
-            <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-              <p className="text-base italic leading-relaxed text-foreground">
-                "Your trusted partner in tax, accounting, and financial
-                success."
+            <div>
+              <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.06] tracking-tight md:text-5xl">
+                Let&apos;s talk about your next quarter with confidence.
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-primary-foreground/80 md:text-base">
+                Share your current setup and goals. We will map the simplest path for compliance, reporting, and steady growth.
               </p>
             </div>
           </div>
-          {/* </CHANGE> */}
 
-          <div className="rounded-xl border bg-card p-8 shadow-lg lg:p-10">
-            <div className="mb-6">
-              <h3 className="mb-2 text-2xl font-bold">Send us a message</h3>
-              <p className="text-sm text-muted-foreground">
-                Just 4 quick fields — we&apos;ll take it from there
-              </p>
-            </div>
-            <form className="space-y-5" onSubmit={handleSubmit}>
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Full Name *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number *</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="+91 98765 43210"
-                    required
-                  />
-                </div>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
+            <div className="space-y-4 text-sm text-primary-foreground/85 md:text-base">
+              <div className="border border-primary-foreground/25 p-4">
+                <p className="mb-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.09em]">
+                  <PhoneIcon className="h-3.5 w-3.5" /> Call / WhatsApp
+                </p>
+                <a href="tel:+918639295812" className="text-lg font-semibold tracking-tight hover:text-white">
+                  +91 86392 95812
+                </a>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
+              <div className="border border-primary-foreground/25 p-4">
+                <p className="mb-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.09em]">
+                  <MailIcon className="h-3.5 w-3.5" /> Email
+                </p>
+                <a href="mailto:info@gaatsco.com" className="hover:text-white">
+                  info@gaatsco.com
+                </a>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="service">Service Interest *</Label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  value={selectedService}
-                  onChange={(e) => setSelectedService(e.target.value)}
-                  className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              <div className="border border-primary-foreground/25 p-4">
+                <p className="mb-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.09em]">
+                  <ClockIcon className="h-3.5 w-3.5" /> Hours
+                </p>
+                <p>Monday - Saturday, 9:00 AM - 6:00 PM</p>
+              </div>
+
+              <div className="border border-primary-foreground/25 p-4">
+                <p className="mb-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.09em]">
+                  <MapPinIcon className="h-3.5 w-3.5" /> Offices
+                </p>
+                <p className="font-medium">{indiaOffice.label}</p>
+                <a
+                  href={`https://maps.google.com/?q=${indiaOffice.mapsQuery}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/80 hover:text-white"
                 >
-                  <option value="">Select a service...</option>
-                  {serviceOptions.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
+                  {indiaOffice.lines.join(", ")}
+                </a>
+                <p className="mt-3 font-medium">{usaOffice.label}</p>
+                <a
+                  href={`https://maps.google.com/?q=${usaOffice.mapsQuery}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/80 hover:text-white"
+                >
+                  {usaOffice.lines.join(", ")}
+                </a>
               </div>
+            </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="message">
-                  Your message <span className="font-normal text-muted-foreground">(optional)</span>
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="A sentence or two is enough — we'll ask the rest on our call"
-                  rows={4}
-                />
-              </div>
+            <div className="bg-[#ececeb] p-6 text-[#262bce] md:p-8">
+              <h3 className="text-3xl font-semibold tracking-tight">Send us a message</h3>
+              <p className="mt-2 text-sm text-[#4f54cc]">Just a few details and we&apos;ll respond within 24 hours.</p>
 
-              <Button
-                type="submit"
-                className="w-full shadow-md shadow-primary/20"
-                size="lg"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send message — we'll reply within 24hrs"}
-              </Button>
+              <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-[#3d42c7]">Full Name *</Label>
+                    <Input id="name" name="name" placeholder="John Doe" required className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-[#3d42c7]">Phone Number *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      required
+                      className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                    />
+                  </div>
+                </div>
 
-              <ul className="space-y-1.5 text-center text-xs text-muted-foreground">
-                <li className="flex items-center justify-center gap-1.5">
-                  <CheckCircleIcon className="h-3.5 w-3.5 text-primary" />
-                  Your information stays confidential
-                </li>
-                <li className="flex items-center justify-center gap-1.5">
-                  <CheckCircleIcon className="h-3.5 w-3.5 text-primary" />
-                  No spam, ever — just a helpful reply
-                </li>
-              </ul>
-            </form>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-[#3d42c7]">Email Address *</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                    className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="service" className="text-[#3d42c7]">Service Interest *</Label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
+                    className="flex h-11 w-full rounded-md border border-[#c8c9e8] bg-[#f4f4f1] px-3 py-2 text-sm text-[#262bce] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#262bce]"
+                  >
+                    <option value="">Select a service...</option>
+                    {serviceOptions.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-[#3d42c7]">Your message (optional)</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us your goals or current challenges"
+                    rows={4}
+                    className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8]"
+                  size="lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send message"}
+                </Button>
+
+                <ul className="space-y-1.5 text-xs text-[#4f54cc]">
+                  <li className="flex items-center gap-1.5">
+                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#262bce]" />
+                    Your information stays confidential
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#262bce]" />
+                    No spam, just a practical follow-up
+                  </li>
+                </ul>
+              </form>
+            </div>
           </div>
-          {/* </CHANGE> */}
+
+          <p className="mt-12 text-center text-5xl font-semibold tracking-tight md:text-7xl">Let&apos;s talk ↗</p>
         </div>
       </div>
     </section>

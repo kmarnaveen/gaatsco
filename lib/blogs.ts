@@ -83,7 +83,7 @@ export const blogs: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Ready to make your next audit the smoothest one yet? Book a free consultation with our team — we'll review your current readiness and outline exactly what you need.",
+        text: "Ready to make your next audit the smoothest one yet? Book a consultation with our team — we'll review your current readiness and outline exactly what you need.",
       },
     ],
   },
@@ -315,7 +315,7 @@ export const blogs: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Want to know what your financials are really telling you? Schedule a free review with our team and we'll walk you through the key metrics for your business.",
+        text: "Want to know what your financials are really telling you? Schedule a review with our team and we'll walk you through the key metrics for your business.",
       },
     ],
   },
