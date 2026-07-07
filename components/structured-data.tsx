@@ -1,7 +1,48 @@
 import type { BlogPost } from "@/lib/blogs"
+import { indiaOffice, usaOffice } from "@/lib/addresses"
 
 const baseUrl = "https://gaatsco.com"
 const orgId = `${baseUrl}/#organization`
+
+type Office = typeof indiaOffice
+
+function postalAddress(office: Office) {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: office.street,
+    addressLocality: office.locality,
+    addressRegion: office.region,
+    postalCode: office.postalCode,
+    addressCountry: office.country,
+  }
+}
+
+function localBusiness(office: Office, id: string) {
+  return {
+    "@type": "AccountingService",
+    "@id": `${baseUrl}/#${id}`,
+    name: `GAATSCO — ${office.locality}`,
+    parentOrganization: { "@id": orgId },
+    url: baseUrl,
+    image: `${baseUrl}/opengraph-image`,
+    telephone: "+91-86392-95812",
+    email: "info@gaatsco.com",
+    priceRange: "$$",
+    address: postalAddress(office),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: office.geo.lat,
+      longitude: office.geo.lng,
+    },
+    hasMap: `https://maps.google.com/?q=${office.mapsQuery}`,
+    openingHoursSpecification: office.hours.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: h.days,
+      opens: h.opens,
+      closes: h.closes,
+    })),
+  }
+}
 
 const organization = {
   "@type": ["Organization", "AccountingService"],
@@ -20,24 +61,7 @@ const organization = {
     { "@type": "Country", name: "India" },
     { "@type": "Country", name: "United States" },
   ],
-  address: [
-    {
-      "@type": "PostalAddress",
-      streetAddress: "8-1-299/B, RP Business Park, Shaikpet",
-      addressLocality: "Hyderabad",
-      addressRegion: "Telangana",
-      postalCode: "500008",
-      addressCountry: "IN",
-    },
-    {
-      "@type": "PostalAddress",
-      streetAddress: "311 S Mammoth Rd",
-      addressLocality: "Manchester",
-      addressRegion: "NH",
-      postalCode: "03109",
-      addressCountry: "US",
-    },
-  ],
+  address: [postalAddress(indiaOffice), postalAddress(usaOffice)],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-86392-95812",
@@ -66,9 +90,21 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
   )
 }
 
-/** Site-wide Organization + WebSite graph (rendered once in the root layout). */
+/** Site-wide Organization + per-location LocalBusiness + WebSite graph. */
 export function StructuredData() {
-  return <JsonLd data={{ "@context": "https://schema.org", "@graph": [organization, website] }} />
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          organization,
+          localBusiness(indiaOffice, "office-hyderabad"),
+          localBusiness(usaOffice, "office-manchester"),
+          website,
+        ],
+      }}
+    />
+  )
 }
 
 /** BreadcrumbList schema. Pass ordered { name, path } crumbs, root first. */
@@ -125,5 +161,18 @@ export function serviceSchema(input: {
       { "@type": "Country", name: "India" },
       { "@type": "Country", name: "United States" },
     ],
+  }
+}
+
+/** FAQPage schema from question/answer pairs. */
+export function faqSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   }
 }

@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/how-it-works"
 import { WhoWeHelp } from "@/components/who-we-help"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { Testimonials } from "@/components/testimonials"
+import { Faq } from "@/components/faq"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 
@@ -21,6 +22,7 @@ export default function Home() {
         <WhoWeHelp />
         <WhyChooseUs />
         <Testimonials />
+        <Faq />
         <CTA />
       </main>
       <Footer />

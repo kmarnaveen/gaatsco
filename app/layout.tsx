@@ -49,6 +49,12 @@ export const metadata: Metadata = {
       ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
       : {},
   },
+  other: {
+    "geo.region": "IN-TG",
+    "geo.placename": "Hyderabad",
+    "geo.position": "17.4256;78.4507",
+    ICBM: "17.4256, 78.4507",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
