@@ -5,6 +5,7 @@ import { BlogContent } from "@/components/blog-content"
 import { Button } from "@/components/ui/button"
 import { ArrowRightIcon } from "@/components/icons"
 import { blogs, formatBlogDate, getBlogBySlug, getLatestBlogs } from "@/lib/blogs"
+import { JsonLd, blogPostingSchema, breadcrumbSchema } from "@/components/structured-data"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -49,6 +50,14 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd data={blogPostingSchema(blog)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Blogs", path: "/blogs" },
+          { name: blog.title, path: `/blogs/${blog.slug}` },
+        ])}
+      />
       <Header />
       <main className="flex-1">
         <article>

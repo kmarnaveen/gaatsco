@@ -1,4 +1,5 @@
 import { ServiceDetailPage } from "@/components/service-detail-page"
+import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/structured-data"
 import {
   indiaTaxationOfferings,
   indiaTaxationStrengths,
@@ -13,7 +14,23 @@ export const metadata = {
 
 export default function IndiaTaxationPage() {
   return (
-    <ServiceDetailPage
+    <>
+      <JsonLd
+        data={serviceSchema({
+          name: "India Taxation Services",
+          description: metadata.description,
+          path: "/services/taxation-india",
+          serviceType: "Tax preparation and compliance",
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "India Taxation Services", path: "/services/taxation-india" },
+        ])}
+      />
+      <ServiceDetailPage
       sectionLabel="India Taxation"
       title="Taxation Services for India"
       intro="Managing Indian tax compliance requires staying on top of income tax, GST, TDS, and corporate tax obligations — all with strict deadlines and evolving regulations. GAATSCO's India team handles your full tax lifecycle so you stay compliant and penalty-free."
@@ -27,6 +44,7 @@ export default function IndiaTaxationPage() {
       strengths={indiaTaxationStrengths}
       closingTitle="Need help with Indian tax compliance?"
       closingText="From GST returns to income tax filing and tax audits — our Hyderabad team is ready to support you."
-    />
+      />
+    </>
   )
 }

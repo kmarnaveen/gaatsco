@@ -8,6 +8,7 @@ import {
   auditSupportStrengths,
 } from "@/lib/audit-support"
 import { ArrowRightIcon } from "@/components/icons"
+import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/structured-data"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -21,6 +22,21 @@ export const metadata = {
 export default function AuditSupportPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd
+        data={serviceSchema({
+          name: "Audit Support Services",
+          description: metadata.description,
+          path: "/services/audit-support",
+          serviceType: "Audit support",
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "Audit Support Services", path: "/services/audit-support" },
+        ])}
+      />
       <Header />
       <main className="flex-1">
         <section className="border-b bg-linear-to-br from-primary/10 via-background to-background py-16 md:py-24">

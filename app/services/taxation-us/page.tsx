@@ -1,4 +1,5 @@
 import { ServiceDetailPage } from "@/components/service-detail-page"
+import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/structured-data"
 import {
   usTaxationOfferings,
   usTaxationStrengths,
@@ -13,7 +14,23 @@ export const metadata = {
 
 export default function USTaxationPage() {
   return (
-    <ServiceDetailPage
+    <>
+      <JsonLd
+        data={serviceSchema({
+          name: "US Taxation Services",
+          description: metadata.description,
+          path: "/services/taxation-us",
+          serviceType: "Tax preparation and compliance",
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "US Taxation Services", path: "/services/taxation-us" },
+        ])}
+      />
+      <ServiceDetailPage
       sectionLabel="US Taxation"
       title="Taxation Services for the United States"
       intro="US tax laws are complex — federal and state obligations, business entity rules, and cross-border reporting create real risk for non-compliance. GAATSCO's US team provides accurate filing, strategic planning, and specialized support for clients with India–USA operations."
@@ -27,6 +44,7 @@ export default function USTaxationPage() {
       strengths={usTaxationStrengths}
       closingTitle="Need help with US tax filing?"
       closingText="Whether you're an individual, business owner, or NRI with US tax obligations — our team across India and the USA is here to help."
-    />
+      />
+    </>
   )
 }
