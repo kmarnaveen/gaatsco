@@ -70,7 +70,8 @@ export function About() {
           <div className="mt-10 border-t border-[#c8c9e8] pt-8 text-sm leading-relaxed text-[#4f54cc] md:text-base">
             <p>
               Our team supports startups, SMEs, and cross-border founders with audit support, taxation, payroll, and
-              advisory. We stay intentionally lean so every client gets senior-level attention and practical execution.
+              advisory — plus web development to get your business online. We stay intentionally lean so every client
+              gets senior-level attention and practical execution.
             </p>
             <p className="mt-4">
               You get direct communication, predictable turnaround, and reporting that explains what matters in plain
