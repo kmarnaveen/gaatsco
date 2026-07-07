@@ -3,9 +3,9 @@ import { ArrowRightIcon, PhoneIcon, CheckCircleIcon } from "@/components/icons";
 import Link from "next/link";
 
 const reassurancePoints = [
-  "30-minute consultation",
+  "Free 30-minute consultation",
   "No obligation",
-  "Response within 24 hours",
+  "Reply within 24 hours",
 ];
 
 export function Hero() {
@@ -16,7 +16,7 @@ export function Hero() {
           <div className="mb-10 flex flex-col gap-4 text-sm sm:flex-row sm:items-start sm:justify-between md:mb-20">
             <span className="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-primary-foreground/80 text-[8px] font-bold">G</span>
             <p className="max-w-xs text-left leading-snug text-primary-foreground/90 sm:text-right">
-              Founded in 2025, GAATSCO supports founders and teams across India and the USA with focused accounting execution.
+              For founders and teams across India and the USA — accounting, tax, and advisory handled with the precision your business runs on.
             </p>
           </div>
 
@@ -29,12 +29,12 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <p className="max-w-xl text-sm leading-relaxed text-primary-foreground/85 md:text-base">
-              Resolve compliance faster, close books with confidence, and scale with clear financial direction without last-minute chaos.
+              Deadlines met, books closed, compliance under control — with the clarity to make every decision with confidence. GAATSCO runs the numbers so you can run the business.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/contact">
                 <Button size="lg" className="group min-h-12 w-full rounded-full border border-primary-foreground/40 bg-primary-foreground text-primary shadow-none hover:bg-primary-foreground/90 sm:w-auto">
-                  Book consultation
+                  Book a free consultation
                   <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
