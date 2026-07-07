@@ -1,15 +1,26 @@
-import {
-  ArrowRightIcon,
-} from "@/components/icons"
+"use client"
+
+import { useState } from "react"
+import { ArrowRightIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
 import { auditSupportSummary } from "@/lib/audit-support"
 import { indiaTaxationSummary } from "@/lib/taxation-india"
 import { usTaxationSummary } from "@/lib/taxation-us"
-import { webDevelopmentSummary } from "@/lib/web-development"
+import { webDevelopmentOfferings, webDevelopmentSummary } from "@/lib/web-development"
 import Link from "next/link"
 
-const services = [
+type ServiceItem = {
+  id: string
+  title: string
+  benefit?: string
+  description: string
+  features?: string[]
+  detailHref?: string
+  contactService?: string
+}
+
+const financeServices: ServiceItem[] = [
   {
     id: "audit-support",
     title: auditSupportSummary.title,
@@ -86,17 +97,33 @@ const services = [
       "Investor and lender-ready financials",
     ],
   },
-  {
-    id: webDevelopmentSummary.id,
-    title: webDevelopmentSummary.title,
-    benefit: webDevelopmentSummary.benefit,
-    description: webDevelopmentSummary.description,
-    features: webDevelopmentSummary.features,
-    detailHref: webDevelopmentSummary.detailHref,
-  },
 ]
 
+const webServices: ServiceItem[] = webDevelopmentOfferings.map((offering) => ({
+  id: `web-${offering.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+  title: offering.title,
+  description: offering.description,
+  detailHref: webDevelopmentSummary.detailHref,
+  contactService: webDevelopmentSummary.title,
+}))
+
+const tabs = [
+  { id: "finance", label: "Financial Services", services: financeServices },
+  { id: "web", label: "Web Development", services: webServices },
+] as const
+
+type TabId = (typeof tabs)[number]["id"]
+
+const headings: Record<TabId, string> = {
+  finance:
+    "We keep you informed at every step, turning compliance and reporting into clear business momentum.",
+  web: "We also design and build fast, modern websites and web apps — the same reliability, now for your online presence.",
+}
+
 export function Services() {
+  const [active, setActive] = useState<TabId>("finance")
+  const activeTab = tabs.find((tab) => tab.id === active) ?? tabs[0]
+
   return (
     <section id="services" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
@@ -107,13 +134,39 @@ export function Services() {
             </div>
             <div>
               <h2 className="max-w-4xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight md:text-5xl">
-                We keep you informed at every step, turning compliance and reporting into clear business momentum.
+                {headings[active]}
               </h2>
             </div>
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-2">
-            {services.map((service) => (
+          <div
+            role="tablist"
+            aria-label="Service category"
+            className="mt-10 inline-flex rounded-full border border-[#c8c9e8] bg-white/60 p-1"
+          >
+            {tabs.map((tab) => {
+              const isActive = tab.id === active
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActive(tab.id)}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
+                    isActive
+                      ? "bg-[#262bce] text-white shadow-sm"
+                      : "text-[#4f54cc] hover:text-[#262bce]"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="mt-10 grid gap-7 md:grid-cols-2">
+            {activeTab.services.map((service) => (
               <article key={service.id} id={service.id} className="border-t border-[#c8c9e8] pt-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <h3 className="pr-2 text-xl font-semibold leading-tight">{service.title}</h3>
@@ -123,18 +176,22 @@ export function Services() {
                     </Link>
                   )}
                 </div>
-                <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-[#6d71d3]">{service.benefit}</p>
+                {service.benefit && (
+                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-[#6d71d3]">{service.benefit}</p>
+                )}
                 <p className="mt-3 text-sm leading-relaxed text-[#4f54cc] md:text-base">{service.description}</p>
-                <ul className="mt-4 space-y-1.5 text-sm text-[#4f54cc]">
-                  {service.features.slice(0, 3).map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-[#262bce]" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                {service.features && service.features.length > 0 && (
+                  <ul className="mt-4 space-y-1.5 text-sm text-[#4f54cc]">
+                    {service.features.slice(0, 3).map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-[#262bce]" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <Link
-                  href={`/contact?service=${encodeURIComponent(service.title)}`}
+                  href={`/contact?service=${encodeURIComponent(service.contactService ?? service.title)}`}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#262bce] transition-colors hover:text-[#4349d7]"
                 >
                   Discuss this service
