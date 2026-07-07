@@ -63,7 +63,7 @@ const financeServices: ServiceItem[] = [
     title: "Payroll Management",
     benefit: "Your team gets paid right, every time",
     description:
-      "Stress-free payroll with full statutory compliance — salary calculations, deductions, and disbursements handled seamlessly.",
+      "Payroll without the stress — full statutory compliance, with salary calculations, deductions, and disbursements handled seamlessly.",
     features: [
       "Salary processing and payslip generation",
       "PF, ESI, and TDS compliance",

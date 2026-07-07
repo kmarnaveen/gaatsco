@@ -30,9 +30,9 @@ export const faqs: Faq[] = [
       "Yes. We handle GST registration, monthly and quarterly GST returns, reconciliation, and ongoing GST compliance for Indian businesses, so you stay compliant and avoid last-minute deadline pressure.",
   },
   {
-    question: "Is the initial consultation free, and how do I get started?",
+    question: "How do I get started with GAATSCO?",
     answer:
-      "Yes. GAATSCO offers a 30-minute initial consultation with no obligation. To get started, book a consultation through the contact page, call +91 86392 95812, or email info@gaatsco.com, and we typically respond within 24 hours.",
+      "GAATSCO offers a 30-minute initial consultation with no obligation to discuss your needs. To get started, book a consultation through the contact page, call +91 86392 95812, or email info@gaatsco.com, and we typically respond within 24 hours.",
   },
   {
     question: "How quickly does GAATSCO respond to enquiries?",

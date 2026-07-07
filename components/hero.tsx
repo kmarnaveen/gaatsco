@@ -3,7 +3,7 @@ import { ArrowRightIcon, PhoneIcon, CheckCircleIcon } from "@/components/icons";
 import Link from "next/link";
 
 const reassurancePoints = [
-  "Free 30-minute consultation",
+  "30-minute consultation",
   "No obligation",
   "Reply within 24 hours",
 ];
@@ -34,7 +34,7 @@ export function Hero() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/contact">
                 <Button size="lg" className="group min-h-12 w-full rounded-full border border-primary-foreground/40 bg-primary-foreground text-primary shadow-none hover:bg-primary-foreground/90 sm:w-auto">
-                  Book a free consultation
+                  Book a consultation
                   <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

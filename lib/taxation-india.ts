@@ -19,7 +19,7 @@ export const indiaTaxationOfferings = [
     icon: ShieldIcon,
     title: "GST Registration & Returns",
     description:
-      "End-to-end GST compliance including registration, monthly and annual returns, reconciliation, and responding to notices — keeping your business penalty-free.",
+      "End-to-end GST compliance including registration, monthly and annual returns, reconciliation, and responding to notices — helping your business avoid penalties.",
   },
   {
     icon: CalculatorIcon,

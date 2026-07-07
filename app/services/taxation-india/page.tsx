@@ -33,7 +33,7 @@ export default function IndiaTaxationPage() {
       <ServiceDetailPage
       sectionLabel="India Taxation"
       title="Taxation Services for India"
-      intro="Managing Indian tax compliance requires staying on top of income tax, GST, TDS, and corporate tax obligations — all with strict deadlines and evolving regulations. GAATSCO's India team handles your full tax lifecycle so you stay compliant and penalty-free."
+      intro="Managing Indian tax compliance requires staying on top of income tax, GST, TDS, and corporate tax obligations — all with strict deadlines and evolving regulations. GAATSCO's India team handles your full tax lifecycle so you stay compliant and avoid penalties."
       image="/tax-compliance-documents-calculator-professional.jpg"
       imageAlt="GAATSCO India taxation services"
       contactService="India Taxation Services"
