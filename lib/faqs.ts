@@ -7,7 +7,7 @@ export const faqs: Faq[] = [
   {
     question: "What services does GAATSCO offer?",
     answer:
-      "GAATSCO provides accounting and bookkeeping, India taxation (income tax, GST, TDS), US taxation, audit support, payroll management, financial statement preparation, and financial statement analysis and advisory. In short: accounting, tax, and business advisory under one roof.",
+      "GAATSCO provides accounting and bookkeeping, India taxation (income tax, GST, TDS), US taxation, audit support, payroll management, financial statement preparation, and financial statement analysis and advisory. We also offer web development — modern, SEO-ready business websites and web applications. In short: accounting, tax, advisory, and web under one roof.",
   },
   {
     question: "Where is GAATSCO located and which regions do you serve?",

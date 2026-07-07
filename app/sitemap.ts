@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/taxation-india`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services/taxation-us`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services/audit-support`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/services/web-development`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blogs`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.6 },
   ]

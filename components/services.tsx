@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/section-label"
 import { auditSupportSummary } from "@/lib/audit-support"
 import { indiaTaxationSummary } from "@/lib/taxation-india"
 import { usTaxationSummary } from "@/lib/taxation-us"
+import { webDevelopmentSummary } from "@/lib/web-development"
 import Link from "next/link"
 
 const services = [
@@ -84,6 +85,14 @@ const services = [
       "Management reporting",
       "Investor and lender-ready financials",
     ],
+  },
+  {
+    id: webDevelopmentSummary.id,
+    title: webDevelopmentSummary.title,
+    benefit: webDevelopmentSummary.benefit,
+    description: webDevelopmentSummary.description,
+    features: webDevelopmentSummary.features,
+    detailHref: webDevelopmentSummary.detailHref,
   },
 ]
 

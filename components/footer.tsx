@@ -82,6 +82,14 @@ export function Footer() {
                   Financial Statement Services
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/web-development"
+                  className="transition-colors hover:text-foreground"
+                >
+                  Web Development
+                </Link>
+              </li>
             </ul>
           </div>
 

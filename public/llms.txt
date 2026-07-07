@@ -10,6 +10,7 @@
 - **Audit Support** — documentation preparation, compliance review, internal control evaluation, on-site support, and post-audit consultation.
 - **Payroll Management** — salary processing, payslips, and PF/ESI/TDS compliance.
 - **Financial Statements** — preparation of balance sheet, P&L, and cash flow, plus ratio/trend analysis and management reporting.
+- **Web Development** — modern, SEO-ready business websites, landing pages, e-commerce, and custom web applications, plus ongoing maintenance and support.
 
 ## Who GAATSCO serves
 
@@ -32,6 +33,7 @@ Founders, startups, small and medium-sized businesses (SMEs), and NRIs (non-resi
 - [India Taxation](https://gaatsco.com/services/taxation-india): Income tax, GST, TDS, and corporate tax for India.
 - [US Taxation](https://gaatsco.com/services/taxation-us): Federal/state filing and cross-border tax for the USA.
 - [Audit Support](https://gaatsco.com/services/audit-support): Pre-audit preparation and auditor support.
+- [Web Development](https://gaatsco.com/services/web-development): Modern, SEO-ready websites, e-commerce, and web apps.
 - [Blog](https://gaatsco.com/blogs): Practical articles on accounting, tax, audit, and payroll.
 - [About](https://gaatsco.com/about): About the firm.
 - [Contact](https://gaatsco.com/contact): Book a consultation or reach the team.
