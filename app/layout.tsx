@@ -4,6 +4,7 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { FloatingCTA } from "@/components/floating-cta";
+import { StructuredData } from "@/components/structured-data";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -39,6 +40,15 @@ export const metadata: Metadata = {
   publisher: "GAATSCO",
   generator: "v0.app",
   metadataBase: new URL("https://gaatsco.com"),
+  alternates: {
+    canonical: "/",
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+      : {},
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -105,6 +115,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
+        <StructuredData />
         {children}
         <FloatingCTA />
         <Toaster />

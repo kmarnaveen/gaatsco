@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -11,7 +8,7 @@ const nextConfig = {
         pathname: "/photos/**",
       },
     ],
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
   },
 }
 

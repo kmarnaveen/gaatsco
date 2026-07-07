@@ -15,6 +15,7 @@ export const metadata = {
   title: "Audit Support Services | GAATSCO",
   description:
     "Comprehensive audit support services including documentation preparation, compliance review, internal control evaluation, on-site support, and post-audit consultation.",
+  alternates: { canonical: "/services/audit-support" },
 }
 
 export default function AuditSupportPage() {

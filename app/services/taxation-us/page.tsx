@@ -8,6 +8,7 @@ export const metadata = {
   title: "US Taxation Services | GAATSCO",
   description:
     "US tax preparation and compliance including individual and business returns, federal and state filing, tax planning, payroll taxes, and cross-border NRI support.",
+  alternates: { canonical: "/services/taxation-us" },
 }
 
 export default function USTaxationPage() {

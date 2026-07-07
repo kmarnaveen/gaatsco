@@ -25,6 +25,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${blog.title} | GAATSCO Blog`,
     description: blog.excerpt,
+    alternates: { canonical: `/blogs/${blog.slug}` },
+    openGraph: {
+      type: "article",
+      title: blog.title,
+      description: blog.excerpt,
+      url: `/blogs/${blog.slug}`,
+      publishedTime: blog.publishedAt,
+      authors: [blog.author],
+    },
   }
 }
 

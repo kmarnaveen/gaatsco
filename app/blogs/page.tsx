@@ -8,6 +8,7 @@ export const metadata = {
   title: "Blogs | GAATSCO - Financial Insights & Updates",
   description:
     "Read the latest articles on accounting, audit support, payroll, and financial management from the GAATSCO team.",
+  alternates: { canonical: "/blogs" },
 }
 
 export default function BlogsPage() {

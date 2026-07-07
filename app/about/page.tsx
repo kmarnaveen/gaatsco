@@ -8,6 +8,7 @@ export const metadata = {
   title: "About Us | GAATSCO - Expert Accounting & Tax Services",
   description:
     "Learn about GAATSCO, a dynamic accounting and advisory firm committed to empowering businesses with innovative financial solutions and expert guidance.",
+  alternates: { canonical: "/about" },
 }
 
 export default function AboutPage() {

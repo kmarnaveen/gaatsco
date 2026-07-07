@@ -8,6 +8,7 @@ export const metadata = {
   title: "Contact Us | GAATSCO - Get Expert Financial Advice",
   description:
     "Get in touch with GAATSCO for tax, accounting, and business advisory services. Visit our offices in Hyderabad, India or Manchester, USA.",
+  alternates: { canonical: "/contact" },
 }
 
 export default function ContactPage() {
