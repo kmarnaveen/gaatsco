@@ -3,10 +3,12 @@ import { Footer } from "@/components/footer"
 import { CTA } from "@/components/cta"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
+import { ServiceFaq } from "@/components/service-faq"
 import { ArrowRightIcon } from "@/components/icons"
 import Image from "next/image"
 import Link from "next/link"
 import type { ComponentType, SVGProps } from "react"
+import type { Faq } from "@/lib/faqs"
 
 type Offering = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
@@ -30,6 +32,7 @@ type ServiceDetailPageProps = {
   strengths: Strength[]
   closingTitle: string
   closingText: string
+  faqs?: Faq[]
 }
 
 export function ServiceDetailPage({
@@ -46,6 +49,7 @@ export function ServiceDetailPage({
   strengths,
   closingTitle,
   closingText,
+  faqs,
 }: ServiceDetailPageProps) {
   const contactHref = `/contact?service=${encodeURIComponent(contactService)}`
 
@@ -128,6 +132,8 @@ export function ServiceDetailPage({
             </div>
           </div>
         </section>
+
+        {faqs && faqs.length > 0 ? <ServiceFaq faqs={faqs} /> : null}
 
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center md:px-6 lg:px-8">

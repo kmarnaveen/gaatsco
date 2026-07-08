@@ -4,6 +4,7 @@ import {
   usTaxationOfferings,
   usTaxationStrengths,
 } from "@/lib/taxation-us"
+import { usTaxationFaqs } from "@/lib/service-faqs"
 
 export const metadata = {
   title: "US Taxation Services | GAATSCO",
@@ -44,6 +45,7 @@ export default function USTaxationPage() {
       strengths={usTaxationStrengths}
       closingTitle="Need help with US tax filing?"
       closingText="Whether you're an individual, business owner, or NRI with US tax obligations — our team across India and the USA is here to help."
+      faqs={usTaxationFaqs}
       />
     </>
   )

@@ -25,7 +25,7 @@ function localBusiness(office: Office, id: string) {
     parentOrganization: { "@id": orgId },
     url: baseUrl,
     image: `${baseUrl}/opengraph-image`,
-    telephone: "+91-86392-95812",
+    telephone: "+91 86392 95812",
     email: "info@gaatsco.com",
     priceRange: "$$",
     address: postalAddress(office),
@@ -55,7 +55,7 @@ const organization = {
   description:
     "GAATSCO provides professional accounting, tax compliance, GST registration, bookkeeping, payroll, and business advisory services for founders, startups, SMEs, and NRIs across India and the USA.",
   email: "info@gaatsco.com",
-  telephone: "+91-86392-95812",
+  telephone: "+91 86392 95812",
   foundingDate: "2025",
   areaServed: [
     { "@type": "Country", name: "India" },
@@ -64,7 +64,7 @@ const organization = {
   address: [postalAddress(indiaOffice), postalAddress(usaOffice)],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-86392-95812",
+    telephone: "+91 86392 95812",
     email: "info@gaatsco.com",
     contactType: "customer service",
     availableLanguage: ["English", "Hindi"],

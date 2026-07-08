@@ -7,6 +7,8 @@ import {
   auditSupportOfferings,
   auditSupportStrengths,
 } from "@/lib/audit-support"
+import { auditSupportFaqs } from "@/lib/service-faqs"
+import { ServiceFaq } from "@/components/service-faq"
 import { ArrowRightIcon } from "@/components/icons"
 import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/structured-data"
 import Image from "next/image"
@@ -135,6 +137,8 @@ export default function AuditSupportPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFaq faqs={auditSupportFaqs} />
 
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center md:px-6 lg:px-8">

@@ -114,6 +114,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/hyderabad"
+                  className="transition-colors hover:text-foreground"
+                >
+                  GAATSCO in Hyderabad
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/blogs"
                   className="transition-colors hover:text-foreground"
                 >

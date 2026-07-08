@@ -4,6 +4,7 @@ import {
   indiaTaxationOfferings,
   indiaTaxationStrengths,
 } from "@/lib/taxation-india"
+import { indiaTaxationFaqs } from "@/lib/service-faqs"
 
 export const metadata = {
   title: "India Taxation Services | GAATSCO",
@@ -44,6 +45,7 @@ export default function IndiaTaxationPage() {
       strengths={indiaTaxationStrengths}
       closingTitle="Need help with Indian tax compliance?"
       closingText="From GST returns to income tax filing and tax audits — our Hyderabad team is ready to support you."
+      faqs={indiaTaxationFaqs}
       />
     </>
   )

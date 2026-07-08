@@ -4,6 +4,7 @@ import {
   webDevelopmentOfferings,
   webDevelopmentStrengths,
 } from "@/lib/web-development"
+import { webDevelopmentFaqs } from "@/lib/service-faqs"
 
 export const metadata = {
   title: "Web Development Services | GAATSCO",
@@ -44,6 +45,7 @@ export default function WebDevelopmentPage() {
         strengths={webDevelopmentStrengths}
         closingTitle="Ready to build or refresh your website?"
         closingText="Tell us about your business and goals, and we'll propose the right build — designed to perform, rank, and convert."
+        faqs={webDevelopmentFaqs}
       />
     </>
   )
