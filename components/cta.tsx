@@ -154,50 +154,50 @@ function CTAForm() {
               </div>
             </div>
 
-            <div className="bg-[#ececeb] p-6 text-[#262bce] md:p-8">
+            <div className="bg-[#fffdf4] p-6 text-[#00311f] md:p-8">
               <h3 className="text-3xl font-semibold tracking-tight">Send us a message</h3>
-              <p className="mt-2 text-sm text-[#4f54cc]">Just a few details and we&apos;ll respond within 24 hours.</p>
+              <p className="mt-2 text-sm text-[#2f4a3c]">Just a few details and we&apos;ll respond within 24 hours.</p>
 
               <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-[#3d42c7]">Full Name *</Label>
-                    <Input id="name" name="name" placeholder="John Doe" required className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]" />
+                    <Label htmlFor="name" className="text-[#0a4a2f]">Full Name *</Label>
+                    <Input id="name" name="name" placeholder="John Doe" required className="border-[#d6d3bd] bg-[#fdfbf1] text-[#00311f]" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-[#3d42c7]">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-[#0a4a2f]">Phone Number *</Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       placeholder="+91 98765 43210"
                       required
-                      className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                      className="border-[#d6d3bd] bg-[#fdfbf1] text-[#00311f]"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-[#3d42c7]">Email Address *</Label>
+                  <Label htmlFor="email" className="text-[#0a4a2f]">Email Address *</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     placeholder="you@example.com"
                     required
-                    className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                    className="border-[#d6d3bd] bg-[#fdfbf1] text-[#00311f]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="service" className="text-[#3d42c7]">Service Interest *</Label>
+                  <Label htmlFor="service" className="text-[#0a4a2f]">Service Interest *</Label>
                   <select
                     id="service"
                     name="service"
                     required
                     value={selectedService}
                     onChange={(e) => setSelectedService(e.target.value)}
-                    className="flex h-11 w-full rounded-md border border-[#c8c9e8] bg-[#f4f4f1] px-3 py-2 text-sm text-[#262bce] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#262bce]"
+                    className="flex h-11 w-full rounded-md border border-[#d6d3bd] bg-[#fdfbf1] px-3 py-2 text-sm text-[#00311f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00311f]"
                   >
                     <option value="">Select a service...</option>
                     {serviceOptions.map((opt) => (
@@ -209,32 +209,32 @@ function CTAForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-[#3d42c7]">Your message (optional)</Label>
+                  <Label htmlFor="message" className="text-[#0a4a2f]">Your message (optional)</Label>
                   <Textarea
                     id="message"
                     name="message"
                     placeholder="Tell us your goals or current challenges"
                     rows={4}
-                    className="border-[#c8c9e8] bg-[#f4f4f1] text-[#262bce]"
+                    className="border-[#d6d3bd] bg-[#fdfbf1] text-[#00311f]"
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8]"
+                  className="w-full rounded-full bg-[#00311f] text-white shadow-none hover:bg-[#001f14]"
                   size="lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send message"}
                 </Button>
 
-                <ul className="space-y-1.5 text-xs text-[#4f54cc]">
+                <ul className="space-y-1.5 text-xs text-[#2f4a3c]">
                   <li className="flex items-center gap-1.5">
-                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#262bce]" />
+                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#00311f]" />
                     Your information stays confidential
                   </li>
                   <li className="flex items-center gap-1.5">
-                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#262bce]" />
+                    <CheckCircleIcon className="h-3.5 w-3.5 text-[#00311f]" />
                     No spam, just a practical follow-up
                   </li>
                 </ul>

@@ -30,7 +30,7 @@ export function WhyChooseUs() {
   return (
     <section id="about" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+        <div className="rounded-4xl bg-[#fffdf4] px-6 py-10 text-[#00311f] md:px-12 md:py-14">
           <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
             <div>
               <SectionLabel>Why GAATSCO</SectionLabel>
@@ -43,23 +43,23 @@ export function WhyChooseUs() {
                 {benefits.map((benefit, index) => {
                   const Icon = benefit.icon
                   return (
-                    <div key={index} className="rounded-xl border border-[#c8c9e8] bg-[#f4f4f1] p-4">
+                    <div key={index} className="rounded-xl border border-[#d6d3bd] bg-[#fdfbf1] p-4">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c8c9e8] text-[#262bce]">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d6d3bd] text-[#00311f]">
                           <Icon className="h-4 w-4" />
                         </div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#3d42c7]">{benefit.title}</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[#0a4a2f]">{benefit.title}</h3>
                       </div>
-                      <p className="mt-3 text-sm leading-relaxed text-[#4f54cc]">{benefit.description}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-[#2f4a3c]">{benefit.description}</p>
                     </div>
                   )
                 })}
               </div>
 
-              <div className="mt-8 flex flex-col gap-4 border-t border-[#c8c9e8] pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-[#4f54cc] md:text-base">Strategic support for India and USA operations, startups, and established businesses.</p>
+              <div className="mt-8 flex flex-col gap-4 border-t border-[#d6d3bd] pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-[#2f4a3c] md:text-base">Strategic support for India and USA operations, startups, and established businesses.</p>
                 <Link href="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8] sm:w-auto">
+                  <Button size="lg" className="w-full rounded-full bg-[#00311f] text-white shadow-none hover:bg-[#001f14] sm:w-auto">
                     See how we can help you
                   </Button>
                 </Link>

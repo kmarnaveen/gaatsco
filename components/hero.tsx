@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/70 py-7 md:py-10">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="rounded-4xl border border-primary/40 bg-primary px-6 py-8 text-primary-foreground shadow-[0_40px_80px_-40px_rgba(43,39,255,0.75)] md:px-9 md:py-9 lg:px-12 lg:py-12">
+        <div className="rounded-4xl border border-primary/40 bg-primary px-6 py-8 text-primary-foreground shadow-[0_40px_80px_-40px_rgba(0,49,31,0.5)] md:px-9 md:py-9 lg:px-12 lg:py-12">
           <div className="mb-10 flex flex-col gap-4 text-sm sm:flex-row sm:items-start sm:justify-between md:mb-20">
             <span className="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-primary-foreground/80 text-[8px] font-bold">G</span>
             <p className="max-w-xs text-left leading-snug text-primary-foreground/90 sm:text-right">

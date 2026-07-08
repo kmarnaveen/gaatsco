@@ -33,7 +33,7 @@ export function WhoWeHelp() {
   return (
     <section className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+        <div className="rounded-4xl bg-[#fffdf4] px-6 py-10 text-[#00311f] md:px-12 md:py-14">
           <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
             <div>
               <SectionLabel>Who We Serve</SectionLabel>
@@ -49,22 +49,22 @@ export function WhoWeHelp() {
             {clients.map((client, index) => {
               const Icon = client.icon
               return (
-                <article key={index} className="overflow-hidden border border-[#c8c9e8] bg-[#f4f4f1]">
-                  <div className="relative aspect-4/3 w-full overflow-hidden bg-[#dedfef]">
+                <article key={index} className="overflow-hidden border border-[#d6d3bd] bg-[#fdfbf1]">
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-[#e2e6da]">
                     <Image
                       src={client.image || "/placeholder.svg"}
                       alt={`${client.title} - GAATSCO Services`}
                       fill
                       className="object-cover grayscale"
                     />
-                    <div className="absolute inset-0 bg-[#262bce]/12" aria-hidden="true" />
+                    <div className="absolute inset-0 bg-[#00311f]/12" aria-hidden="true" />
                   </div>
                   <div className="p-5">
-                    <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#c8c9e8] text-[#262bce]">
+                    <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#d6d3bd] text-[#00311f]">
                       <Icon className="h-4 w-4" />
                     </div>
                     <h3 className="mb-2 text-lg font-semibold">{client.title}</h3>
-                    <p className="text-sm leading-relaxed text-[#4f54cc]">{client.description}</p>
+                    <p className="text-sm leading-relaxed text-[#2f4a3c]">{client.description}</p>
                   </div>
                 </article>
               )

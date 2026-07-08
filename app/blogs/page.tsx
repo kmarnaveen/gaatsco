@@ -20,7 +20,7 @@ export default function BlogsPage() {
       <main className="flex-1">
         <section className="border-b border-border/60 py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-            <div className="rounded-3xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+            <div className="rounded-3xl bg-[#fffdf4] px-6 py-10 text-[#00311f] md:px-12 md:py-14">
               <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
                 <div>
                   <SectionLabel>Latest News</SectionLabel>

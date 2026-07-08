@@ -127,7 +127,7 @@ export function Services() {
   return (
     <section id="services" className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-        <div className="rounded-4xl bg-[#ececeb] px-6 py-10 text-[#262bce] md:px-12 md:py-14">
+        <div className="rounded-4xl bg-[#fffdf4] px-6 py-10 text-[#00311f] md:px-12 md:py-14">
           <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
             <div>
               <SectionLabel>Services & Expertise</SectionLabel>
@@ -142,7 +142,7 @@ export function Services() {
           <div
             role="tablist"
             aria-label="Service category"
-            className="mt-10 inline-flex rounded-full border border-[#c8c9e8] bg-white/60 p-1"
+            className="mt-10 inline-flex rounded-full border border-[#d6d3bd] bg-white/60 p-1"
           >
             {tabs.map((tab) => {
               const isActive = tab.id === active
@@ -155,8 +155,8 @@ export function Services() {
                   onClick={() => setActive(tab.id)}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
                     isActive
-                      ? "bg-[#262bce] text-white shadow-sm"
-                      : "text-[#4f54cc] hover:text-[#262bce]"
+                      ? "bg-[#00311f] text-white shadow-sm"
+                      : "text-[#2f4a3c] hover:text-[#00311f]"
                   }`}
                 >
                   {tab.label}
@@ -167,24 +167,24 @@ export function Services() {
 
           <div className="mt-10 grid gap-7 md:grid-cols-2">
             {activeTab.services.map((service) => (
-              <article key={service.id} id={service.id} className="border-t border-[#c8c9e8] pt-5">
+              <article key={service.id} id={service.id} className="border-t border-[#d6d3bd] pt-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <h3 className="pr-2 text-xl font-semibold leading-tight">{service.title}</h3>
                   {service.detailHref && (
-                    <Link href={service.detailHref} className="mt-1 shrink-0 self-start text-[#4f54cc] transition-colors hover:text-[#262bce]">
+                    <Link href={service.detailHref} className="mt-1 shrink-0 self-start text-[#2f4a3c] transition-colors hover:text-[#00311f]">
                       <ArrowRightIcon className="h-4 w-4" />
                     </Link>
                   )}
                 </div>
                 {service.benefit && (
-                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-[#6d71d3]">{service.benefit}</p>
+                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-[#566b5f]">{service.benefit}</p>
                 )}
-                <p className="mt-3 text-sm leading-relaxed text-[#4f54cc] md:text-base">{service.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#2f4a3c] md:text-base">{service.description}</p>
                 {service.features && service.features.length > 0 && (
-                  <ul className="mt-4 space-y-1.5 text-sm text-[#4f54cc]">
+                  <ul className="mt-4 space-y-1.5 text-sm text-[#2f4a3c]">
                     {service.features.slice(0, 3).map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-[#262bce]" />
+                        <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-[#00311f]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -192,7 +192,7 @@ export function Services() {
                 )}
                 <Link
                   href={`/contact?service=${encodeURIComponent(service.contactService ?? service.title)}`}
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#262bce] transition-colors hover:text-[#4349d7]"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#00311f] transition-colors hover:text-[#001f14]"
                 >
                   Discuss this service
                   <ArrowRightIcon className="h-4 w-4" />
@@ -201,13 +201,13 @@ export function Services() {
             ))}
           </div>
 
-          <div className="mt-10 border-t border-[#c8c9e8] pt-8 text-center">
-            <p className="text-lg font-medium text-[#262bce]">Need help choosing the right service mix?</p>
-            <p className="mx-auto mt-2 max-w-2xl text-sm text-[#4f54cc]">
+          <div className="mt-10 border-t border-[#d6d3bd] pt-8 text-center">
+            <p className="text-lg font-medium text-[#00311f]">Need help choosing the right service mix?</p>
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-[#2f4a3c]">
               Share your stage and goals. We will propose the simplest setup that keeps you compliant and growth-ready.
             </p>
             <Link href="/contact" className="mt-5 inline-block">
-              <Button size="lg" className="rounded-full bg-[#262bce] text-white shadow-none hover:bg-[#2025b8]">
+              <Button size="lg" className="rounded-full bg-[#00311f] text-white shadow-none hover:bg-[#001f14]">
                 Talk to an expert
               </Button>
             </Link>
