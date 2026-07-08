@@ -29,4 +29,24 @@ export const blogImages = {
     credit: "Hanna Pad",
     alt: "Person analyzing business reports and charts on a laptop",
   },
+  seoBasics: {
+    id: 265087,
+    credit: "Pexels",
+    alt: "Laptop displaying website code alongside a search results page",
+  },
+  coreWebVitals: {
+    id: 4164418,
+    credit: "Pexels",
+    alt: "Website performance and analytics dashboard on a laptop screen",
+  },
+  technicalSeo: {
+    id: 270348,
+    credit: "Pexels",
+    alt: "Lines of website code displayed on a computer monitor",
+  },
+  localSeo: {
+    id: 590016,
+    credit: "Pexels",
+    alt: "Person building a business website on a laptop at a desk",
+  },
 } as const

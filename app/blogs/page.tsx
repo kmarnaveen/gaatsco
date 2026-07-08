@@ -1,8 +1,8 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { BlogCard } from "@/components/blog-card"
 import { SectionLabel } from "@/components/section-label"
-import { getLatestBlogs } from "@/lib/blogs"
+import { BlogsTabs } from "@/components/blogs-tabs"
+import { getAllBlogs } from "@/lib/blogs"
 
 export const metadata = {
   title: "Blogs | GAATSCO - Financial Insights & Updates",
@@ -12,7 +12,9 @@ export const metadata = {
 }
 
 export default function BlogsPage() {
-  const blogs = getLatestBlogs()
+  const blogs = getAllBlogs()
+  const webBlogs = blogs.filter((blog) => blog.category === "Web Development")
+  const financeBlogs = blogs.filter((blog) => blog.category !== "Web Development")
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -32,11 +34,7 @@ export default function BlogsPage() {
                 </div>
               </div>
 
-              <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {blogs.map((blog) => (
-                  <BlogCard key={blog.slug} blog={blog} />
-                ))}
-              </div>
+              <BlogsTabs financeBlogs={financeBlogs} webBlogs={webBlogs} />
             </div>
           </div>
         </section>

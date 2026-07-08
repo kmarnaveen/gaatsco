@@ -319,6 +319,249 @@ export const blogs: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "seo-basics-for-business-websites",
+    title: "SEO Basics for Business Websites: A Plain-English Guide for 2026",
+    excerpt:
+      "You built a website — now how do you get found on Google? Here's what search engine optimization actually means for a business site, minus the jargon.",
+    category: "Web Development",
+    readTime: "6 min read",
+    publishedAt: "2026-07-07",
+    author: "GAATSCO Team",
+    image: pexelsImage(blogImages.seoBasics.id),
+    imageAlt: blogImages.seoBasics.alt,
+    imageCredit: blogImages.seoBasics.credit,
+    contactService: "Web Development",
+    content: [
+      {
+        type: "paragraph",
+        text: "A beautiful website that nobody can find is like a shop on a street with no address. Search engine optimization — SEO — is simply the work of making sure that when someone searches for what you offer, your site is one of the answers Google shows. For most small businesses, organic search is the single largest source of new visitors, and unlike ads, it doesn't cost you every time someone clicks.",
+      },
+      {
+        type: "paragraph",
+        text: "The good news: you don't need to be a specialist to get the fundamentals right. You need to understand what search engines are trying to do — connect people with the most relevant, trustworthy, fastest answer — and then make your site the obvious choice.",
+      },
+      { type: "heading", text: "SEO Has Three Pillars" },
+      {
+        type: "list",
+        items: [
+          "On-page SEO: the content and structure of each page — titles, headings, text, and images that clearly match what people search for.",
+          "Technical SEO: the plumbing — site speed, mobile-friendliness, clean code, sitemaps, and crawlability that let search engines read your site.",
+          "Off-page SEO: your reputation across the web — links from other sites, reviews, and mentions that signal your business is credible.",
+        ],
+      },
+      { type: "heading", text: "Start With the Words Your Customers Use" },
+      {
+        type: "paragraph",
+        text: "Keyword research isn't about stuffing your pages with buzzwords. It's about matching the language your customers actually type. Someone in Hyderabad looking for help might search \"GST registration consultant near me\" — not \"indirect taxation advisory services.\" Write for the real query, and use those phrases naturally in your page titles, headings, and opening paragraphs.",
+      },
+      { type: "heading", text: "Every Page Needs a Job" },
+      {
+        type: "paragraph",
+        text: "Search engines rank pages, not websites. Each page should target one clear topic and answer it thoroughly. A single \"Services\" page that lists ten offerings will almost always lose to ten focused pages that each go deep on one service. This is why a well-structured site — with a dedicated page per service and per location — consistently outperforms a thin one-pager.",
+      },
+      { type: "heading", text: "The On-Page Essentials" },
+      {
+        type: "list",
+        items: [
+          "A unique, descriptive title tag (55–60 characters) on every page",
+          "A meta description that reads like an invitation, not a summary",
+          "One clear H1 heading, with H2s and H3s that organize the content",
+          "Descriptive, compressed images with meaningful alt text",
+          "Internal links connecting related pages so visitors — and Google — can navigate",
+        ],
+      },
+      { type: "heading", text: "SEO Is a Compounding Investment" },
+      {
+        type: "paragraph",
+        text: "Unlike advertising, SEO builds equity. A page that ranks well keeps sending you visitors month after month with no per-click cost. It takes time — usually three to six months to see meaningful movement — but the results compound rather than disappear the moment you stop paying.",
+      },
+      {
+        type: "paragraph",
+        text: "At GAATSCO, every website we build is SEO-ready from day one — clean markup, structured data, proper heading hierarchy, and fast load times baked in. If you want a site that's built to be found, not just to look good, book a consultation and we'll map out the right structure for your business.",
+      },
+    ],
+  },
+  {
+    slug: "core-web-vitals-seo-ranking",
+    title: "Core Web Vitals: Why Site Speed Now Decides Your Google Ranking",
+    excerpt:
+      "Google measures how fast and stable your pages feel to real users — and rewards the ones that perform. Here's what Core Web Vitals are and how to pass them.",
+    category: "Web Development",
+    readTime: "6 min read",
+    publishedAt: "2026-06-25",
+    author: "GAATSCO Team",
+    image: pexelsImage(blogImages.coreWebVitals.id),
+    imageAlt: blogImages.coreWebVitals.alt,
+    imageCredit: blogImages.coreWebVitals.credit,
+    contactService: "Web Development",
+    content: [
+      {
+        type: "paragraph",
+        text: "Google has been clear for years: a slow, janky website hurts your rankings. Its Core Web Vitals are a set of real-world measurements that capture how a page feels to an actual visitor — how quickly it loads, how fast it responds to a tap, and whether things jump around as it renders. Pages that score well get a ranking edge; pages that don't get quietly pushed down.",
+      },
+      {
+        type: "paragraph",
+        text: "For a business, this matters twice over. The same problems that hurt your ranking — slow loads, layout shifts, laggy buttons — are exactly what make visitors give up and leave. Speed isn't a technical nicety; it's conversion.",
+      },
+      { type: "heading", text: "The Three Metrics That Matter" },
+      {
+        type: "list",
+        items: [
+          "Largest Contentful Paint (LCP): how long until the main content appears. Aim for under 2.5 seconds.",
+          "Interaction to Next Paint (INP): how quickly the page responds when someone taps or clicks. Aim for under 200 milliseconds.",
+          "Cumulative Layout Shift (CLS): how much the page visibly jumps as it loads. Aim for a score under 0.1.",
+        ],
+      },
+      { type: "heading", text: "What Actually Slows Sites Down" },
+      {
+        type: "paragraph",
+        text: "In our experience, the same culprits show up again and again — and most have nothing to do with your hosting bill.",
+      },
+      {
+        type: "list",
+        items: [
+          "Huge, uncompressed images loaded at full resolution",
+          "Bloated page builders and a stack of third-party plugins",
+          "Render-blocking scripts and fonts that delay the first paint",
+          "Ads or embeds that load late and shove content around the page",
+          "No caching or content delivery network for repeat visitors",
+        ],
+      },
+      { type: "heading", text: "How to Measure Your Own Site" },
+      {
+        type: "paragraph",
+        text: "You don't have to guess. Google's free PageSpeed Insights tool gives you real Core Web Vitals data for any URL, along with a prioritized list of fixes. The Search Console \"Core Web Vitals\" report shows how every page on your site performs for real visitors over time — the numbers Google actually uses to rank you.",
+      },
+      { type: "heading", text: "Build Fast, Don't Bolt Speed On Later" },
+      {
+        type: "paragraph",
+        text: "The hardest sites to make fast are the ones built without performance in mind — heavy templates, dozens of plugins, and images dropped in at full size. Retrofitting speed onto that is expensive and frustrating. Building on a modern, lightweight framework with images optimized and code split from the start makes strong Core Web Vitals the default, not a rescue project.",
+      },
+      {
+        type: "paragraph",
+        text: "GAATSCO builds every site to pass Core Web Vitals out of the box — optimized images, minimal scripts, and modern frameworks that stay fast under real-world load. If your current site is slow or slipping in search, book a consultation and we'll run a performance audit for you.",
+      },
+    ],
+  },
+  {
+    slug: "technical-seo-checklist-website-launch",
+    title: "The Technical SEO Checklist for Launching a New Website",
+    excerpt:
+      "Great content won't rank if search engines can't crawl, understand, and index your site. Run through this technical checklist before you go live.",
+    category: "Web Development",
+    readTime: "7 min read",
+    publishedAt: "2026-06-13",
+    author: "GAATSCO Team",
+    image: pexelsImage(blogImages.technicalSeo.id),
+    imageAlt: blogImages.technicalSeo.alt,
+    imageCredit: blogImages.technicalSeo.credit,
+    contactService: "Web Development",
+    content: [
+      {
+        type: "paragraph",
+        text: "Technical SEO is the foundation everything else sits on. You can write brilliant content and earn great links, but if search engines can't crawl your pages, understand what's on them, or serve them quickly, none of it counts. The best time to get this right is before launch — fixing it afterward often means undoing work and losing rankings in the process.",
+      },
+      { type: "heading", text: "Make Sure Google Can Find Every Page" },
+      {
+        type: "list",
+        items: [
+          "Generate and submit an XML sitemap listing every page you want indexed",
+          "Add a robots.txt file that allows crawling and points to your sitemap",
+          "Check that no important pages are accidentally set to \"noindex\"",
+          "Verify your site in Google Search Console before launch day",
+        ],
+      },
+      { type: "heading", text: "Get Your URLs and Structure Right" },
+      {
+        type: "paragraph",
+        text: "Clean, readable URLs help both users and search engines. Use short, descriptive paths like /services/web-development rather than /page?id=42. Pick one version of your domain (with or without www, always https) and redirect the rest to it, so you don't split your ranking signals across duplicates.",
+      },
+      { type: "heading", text: "Help Search Engines Understand Your Content" },
+      {
+        type: "paragraph",
+        text: "Structured data — small snippets of code that describe your business, services, articles, and reviews — helps Google display rich results like star ratings, FAQs, and business details. For a local business, LocalBusiness and Organization markup with your name, address, and phone number is essential.",
+      },
+      { type: "heading", text: "The Pre-Launch Technical Checklist" },
+      {
+        type: "list",
+        items: [
+          "HTTPS enabled with a valid SSL certificate across the whole site",
+          "Mobile-responsive layout tested on real phone screen sizes",
+          "Canonical tags set to prevent duplicate-content confusion",
+          "Descriptive title tags and meta descriptions on every page",
+          "Structured data added for your business, services, and articles",
+          "301 redirects mapped from any old URLs to their new equivalents",
+          "Custom 404 page that guides lost visitors back into the site",
+          "Core Web Vitals checked and passing on key templates",
+        ],
+      },
+      { type: "heading", text: "Don't Forget the Migration Risk" },
+      {
+        type: "paragraph",
+        text: "If you're replacing an existing site, the single biggest SEO risk is losing the rankings you already have. Every old URL that had traffic needs a 301 redirect to its new home. Skip this, and you can wipe out years of accumulated search equity overnight. A proper redirect map is not optional — it's the difference between a smooth relaunch and a traffic crash.",
+      },
+      {
+        type: "paragraph",
+        text: "GAATSCO handles the full technical SEO setup — sitemaps, structured data, redirects, and Search Console verification — on every site we build, and manages migrations so you keep the rankings you've earned. Planning a new site or a rebuild? Book a consultation and we'll protect your search visibility through the transition.",
+      },
+    ],
+  },
+  {
+    slug: "local-seo-for-indian-businesses",
+    title: "Local SEO: How Indian Businesses Get Found by Nearby Customers",
+    excerpt:
+      "\"Near me\" searches are how people find local services today. Here's how to claim your Google presence and rank for customers in your city.",
+    category: "Web Development",
+    readTime: "6 min read",
+    publishedAt: "2026-06-03",
+    author: "GAATSCO Team",
+    image: pexelsImage(blogImages.localSeo.id),
+    imageAlt: blogImages.localSeo.alt,
+    imageCredit: blogImages.localSeo.credit,
+    contactService: "Web Development",
+    content: [
+      {
+        type: "paragraph",
+        text: "When someone in Hyderabad needs an accountant, a consultant, or a local service, they don't open a directory — they search \"near me\" on their phone and call one of the first businesses that appears. Local SEO is how you make sure that business is yours. For any company that serves a specific city or region, it's often the highest-return marketing you can invest in.",
+      },
+      { type: "heading", text: "Start With Your Google Business Profile" },
+      {
+        type: "paragraph",
+        text: "Your free Google Business Profile is the single most important asset in local search. It's what powers the map pack — those three highlighted businesses that appear above the regular results — and the information panel on the right of a search. Claim it, verify it, and fill in every field: category, hours, services, photos, and a complete description.",
+      },
+      { type: "heading", text: "Consistency Is the Whole Game" },
+      {
+        type: "paragraph",
+        text: "Google cross-checks your business details across the web. Your Name, Address, and Phone number — the \"NAP\" — must match exactly everywhere they appear: your website, Google profile, JustDial, social pages, and local directories. Even small inconsistencies, like \"Road\" versus \"Rd,\" can dilute your ranking signals and confuse potential customers.",
+      },
+      { type: "heading", text: "What Drives Local Rankings" },
+      {
+        type: "list",
+        items: [
+          "A complete, active Google Business Profile in the right category",
+          "Consistent NAP details across your site and every listing",
+          "Genuine customer reviews — quantity, quality, and recency all matter",
+          "Location and service pages on your website targeting your city",
+          "Local structured data (LocalBusiness markup) on your site",
+        ],
+      },
+      { type: "heading", text: "Reviews Are Your Reputation and Your Ranking" },
+      {
+        type: "paragraph",
+        text: "Reviews influence both how Google ranks you and whether a customer chooses you over the business next door. Ask satisfied clients for a review, make it easy with a direct link, and respond to every review — positive or negative — professionally. A steady stream of recent, genuine reviews is one of the strongest local signals there is.",
+      },
+      { type: "heading", text: "Build City and Service Pages" },
+      {
+        type: "paragraph",
+        text: "Your website should reinforce your local relevance. Create pages that clearly state where you operate and what you offer there — for example, a dedicated page for each key service that mentions your city naturally in the title, headings, and content. This gives Google unambiguous signals about who you serve and where.",
+      },
+      {
+        type: "paragraph",
+        text: "GAATSCO builds websites with local SEO built in — city-focused service pages, LocalBusiness structured data, and clean NAP consistency — and can help you set up and optimize your Google Business Profile. Want to get found by customers in your area? Book a consultation and we'll build your local search foundation.",
+      },
+    ],
+  },
 ]
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
@@ -326,9 +569,13 @@ export function getBlogBySlug(slug: string): BlogPost | undefined {
 }
 
 export function getLatestBlogs(count = 5): BlogPost[] {
-  return [...blogs]
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, count)
+  return getAllBlogs().slice(0, count)
+}
+
+export function getAllBlogs(): BlogPost[] {
+  return [...blogs].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  )
 }
 
 export function formatBlogDate(dateString: string): string {
