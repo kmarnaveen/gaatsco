@@ -82,7 +82,7 @@ export const webDevelopmentSummary = {
     "SEO-ready, responsive, fast-loading builds",
     "Ongoing maintenance and support",
   ],
-  image: "/business-growth-chart-strategy-meeting-professiona.jpg",
+  image: "/analytics-dashboard-strategy-room.jpg",
   detailHref: "/services/web-development",
   contactService: "Web Development",
 }

@@ -11,7 +11,7 @@ import { hyderabad, hyderabadServices } from "@/lib/locations"
 export const metadata: Metadata = {
   title: "Accounting, Tax & Web Development in Hyderabad | GAATSCO",
   description:
-    "GAATSCO is a Hyderabad-based accounting, tax, audit, and web development firm serving startups, SMEs, and NRIs across Telangana. Book a free consultation.",
+    "GAATSCO is a Hyderabad-based accounting, tax, audit, and web development firm serving startups, SMEs, and NRIs across Telangana. Book a 30-minute consultation.",
   alternates: { canonical: `/${hyderabad.slug}` },
 }
 

@@ -30,6 +30,16 @@ export const faqs: Faq[] = [
       "Yes. We handle GST registration, monthly and quarterly GST returns, reconciliation, and ongoing GST compliance for Indian businesses, so you stay compliant and avoid last-minute deadline pressure.",
   },
   {
+    question: "How much do GAATSCO's services cost?",
+    answer:
+      "It depends on the scope: for example, how many GST registrations you have, your monthly transaction volume, the number of employees on payroll, and which returns need filing. After your 30-minute consultation we share the scope, timeline and fee, and no work starts until you agree to them. There are no hidden fees.",
+  },
+  {
+    question: "Do I need to visit your office?",
+    answer:
+      "No. We work with clients across India and the USA by phone, WhatsApp and email, so you can share documents and get updates from wherever you are. You're also welcome to meet us at our Hyderabad office in Shaikpet.",
+  },
+  {
     question: "How do I get started with GAATSCO?",
     answer:
       "GAATSCO offers a 30-minute initial consultation with no obligation to discuss your needs. To get started, book a consultation through the contact page, call +91 86392 95812, or email info@gaatsco.com, and we typically respond within 24 hours.",

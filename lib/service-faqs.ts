@@ -24,7 +24,7 @@ export const indiaTaxationFaqs: Faq[] = [
   {
     question: "How do I get started with GAATSCO's India tax services?",
     answer:
-      "Book a free 30-minute consultation through our contact page, call +91 86392 95812, or email info@gaatsco.com. We review your situation, outline what's needed, and typically respond within 24 hours.",
+      "Book a 30-minute consultation through our contact page, call +91 86392 95812, or email info@gaatsco.com. We review your situation, outline what's needed, and typically respond within 24 hours.",
   },
 ]
 

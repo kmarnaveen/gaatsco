@@ -10,9 +10,11 @@ import {
 import { auditSupportFaqs } from "@/lib/service-faqs"
 import { ServiceFaq } from "@/components/service-faq"
 import { ArrowRightIcon } from "@/components/icons"
+import { CONSULTATION_CTA } from "@/lib/contact"
 import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/structured-data"
 import Image from "next/image"
 import Link from "next/link"
+import { BookConsultation } from "@/components/book-consultation"
 
 export const metadata = {
   title: "Audit Support Services | GAATSCO",
@@ -60,7 +62,7 @@ export default function AuditSupportPage() {
                   your business. At GAATSCO, we offer audit support that goes beyond conventional preparation — ensuring
                   your audit experience is seamless and adds significant value to your operations.
                 </p>
-                <Link href="/contact?service=Audit%20Support%20Services">
+                <Link href="#contact">
                   <Button size="lg" className="shadow-md shadow-primary/25">
                     Get audit support
                     <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -147,16 +149,16 @@ export default function AuditSupportPage() {
               Whether you need pre-audit preparation, on-site support, or post-audit guidance — GAATSCO is here to help
               businesses across India and the USA.
             </p>
-            <Link href="/contact?service=Audit%20Support%20Services">
+            <BookConsultation>
               <Button size="lg" className="shadow-md shadow-primary/20">
-                Book a consultation
+                {CONSULTATION_CTA}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </BookConsultation>
           </div>
         </section>
 
-        <CTA />
+        <CTA defaultService="Audit Support Services" />
       </main>
       <Footer />
     </div>

@@ -16,6 +16,9 @@ export default function ContactPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
+        {/* Form first: people who reach this page have already decided to get in touch. */}
+        <CTA headingAs="h1" />
+
         <section className="border-b bg-muted/30 py-12">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
             <div className="mb-8 text-center">
@@ -114,8 +117,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        <CTA />
       </main>
       <Footer />
     </div>

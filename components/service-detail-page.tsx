@@ -4,11 +4,13 @@ import { CTA } from "@/components/cta"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
 import { ServiceFaq } from "@/components/service-faq"
-import { ArrowRightIcon } from "@/components/icons"
+import { ArrowRightIcon, MessageCircleIcon } from "@/components/icons"
+import { CONSULTATION_CTA, whatsappHref } from "@/lib/contact"
 import Image from "next/image"
 import Link from "next/link"
 import type { ComponentType, SVGProps } from "react"
 import type { Faq } from "@/lib/faqs"
+import { BookConsultation } from "@/components/book-consultation"
 
 type Offering = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
@@ -51,7 +53,8 @@ export function ServiceDetailPage({
   closingText,
   faqs,
 }: ServiceDetailPageProps) {
-  const contactHref = `/contact?service=${encodeURIComponent(contactService)}`
+  // The lead form sits at the bottom of this page, preselected with this service.
+  const contactHref = "#contact"
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -72,12 +75,20 @@ export function ServiceDetailPage({
                   {title}
                 </h1>
                 <p className="mb-6 text-lg leading-relaxed text-muted-foreground">{intro}</p>
-                <Link href={contactHref}>
-                  <Button size="lg" className="shadow-md shadow-primary/25">
-                    {contactCta}
-                    <ArrowRightIcon className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link href={contactHref}>
+                    <Button size="lg" className="w-full shadow-md shadow-primary/25 sm:w-auto">
+                      {contactCta}
+                      <ArrowRightIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <a href={whatsappHref(`Hi GAATSCO, I'd like help with ${title}.`)} target="_blank" rel="noopener noreferrer">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                      <MessageCircleIcon className="mr-2 h-4 w-4" />
+                      WhatsApp us
+                    </Button>
+                  </a>
+                </div>
               </div>
               <div className="relative aspect-4/3 overflow-hidden rounded-2xl border shadow-xl">
                 <Image src={image} alt={imageAlt} fill className="object-cover" priority />
@@ -139,16 +150,16 @@ export function ServiceDetailPage({
           <div className="mx-auto max-w-3xl px-4 text-center md:px-6 lg:px-8">
             <h2 className="mb-4 text-2xl font-bold md:text-3xl">{closingTitle}</h2>
             <p className="mb-8 text-muted-foreground">{closingText}</p>
-            <Link href={contactHref}>
+            <BookConsultation>
               <Button size="lg" className="shadow-md shadow-primary/20">
-                Book a consultation
+                {CONSULTATION_CTA}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </BookConsultation>
           </div>
         </section>
 
-        <CTA />
+        <CTA defaultService={contactService} />
       </main>
       <Footer />
     </div>

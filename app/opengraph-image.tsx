@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#00311f",
-          color: "#f7f4e8",
+          background: "#6ab0e3",
+          color: "#0b2a45",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
               height: 44,
               marginRight: 18,
               borderRadius: 8,
-              border: "2px solid rgba(247,244,232,0.9)",
+              border: "2px solid rgba(11,42,69,0.9)",
               fontSize: 26,
               fontWeight: 700,
             }}

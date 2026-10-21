@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { MenuIcon, PhoneIcon } from "@/components/icons"
+import { MenuIcon, PhoneIcon, CalendarIcon } from "@/components/icons"
+import { BookConsultation } from "@/components/book-consultation"
 import { Logo } from "@/components/logo"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
@@ -57,12 +58,12 @@ export function Header() {
                 <PhoneIcon className="h-4 w-4" />
               </Button>
             </a>
-            <Link href="/contact" className="hidden md:block">
+            <BookConsultation className="hidden md:block">
               <Button className="items-center gap-2 rounded-full px-5 shadow-md shadow-primary/25">
-                <PhoneIcon className="h-4 w-4" />
-                Book Consultation
+                <CalendarIcon className="h-4 w-4" />
+                Book a consultation
               </Button>
-            </Link>
+            </BookConsultation>
             <Button
               variant="ghost"
               size="icon"
@@ -96,9 +97,11 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/contact" className="mt-2" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full shadow-sm">Book a Consultation</Button>
-              </Link>
+              <div className="mt-2" onClick={() => setMobileMenuOpen(false)}>
+                <BookConsultation className="block">
+                  <Button className="w-full shadow-sm">Book a consultation</Button>
+                </BookConsultation>
+              </div>
             </div>
           </nav>
         </div>

@@ -4,6 +4,7 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { FloatingCTA } from "@/components/floating-cta";
+import { Analytics } from "@/components/analytics";
 import { StructuredData } from "@/components/structured-data";
 
 const manrope = Manrope({
@@ -102,8 +103,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#00311f" },
-    { media: "(prefers-color-scheme: dark)", color: "#00311f" },
+    { media: "(prefers-color-scheme: light)", color: "#eaf6ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#eaf6ff" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -125,6 +126,7 @@ export default function RootLayout({
         {children}
         <FloatingCTA />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,4 +1,6 @@
 import { SectionLabel } from "@/components/section-label"
+import { ArrowUpRightIcon } from "@/components/icons"
+import Link from "next/link"
 
 const testimonials = [
   {
@@ -29,27 +31,30 @@ export function Testimonials() {
     <section className="border-b border-border/60 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="rounded-4xl bg-primary px-6 py-10 text-primary-foreground md:px-12 md:py-14">
-          <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
-            <div>
-              <SectionLabel className="text-primary-foreground/85 [&_span]:bg-primary-foreground">Testimonials</SectionLabel>
-            </div>
-            <div className="space-y-6">
-              {testimonials.slice(0, 1).map((t) => (
-                <figure key={t.name}>
-                  <figcaption className="mb-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.08em] text-primary-foreground/80">
-                    <span className="rounded-full border border-primary-foreground/40 px-3 py-1">{t.name}</span>
-                    <span>{t.role}</span>
-                  </figcaption>
-                  <blockquote className="max-w-2xl text-xl leading-tight tracking-tight sm:text-2xl md:text-4xl">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <p className="mt-4 text-sm uppercase tracking-[0.09em] text-primary-foreground/80">{t.highlight}</p>
-                </figure>
-              ))}
-            </div>
+          <SectionLabel className="text-primary-foreground/85 [&_span]:bg-primary-foreground">Testimonials</SectionLabel>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="flex flex-col border border-primary-foreground/25 p-6">
+                <blockquote className="flex-1 text-base leading-relaxed md:text-lg">&ldquo;{t.quote}&rdquo;</blockquote>
+                <figcaption className="mt-6 text-sm">
+                  <span className="block font-semibold">{t.name}</span>
+                  <span className="block text-primary-foreground/80">{t.role}</span>
+                  <span className="mt-3 inline-block rounded-full border border-primary-foreground/40 px-3 py-1 text-xs uppercase tracking-[0.08em] text-primary-foreground/85">
+                    {t.highlight}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
 
-          <p className="mt-16 text-center text-3xl font-semibold tracking-tight sm:text-5xl md:mt-24 md:text-7xl">Let&apos;s talk ↗</p>
+          <Link
+            href="#contact"
+            className="mt-14 flex items-center justify-center gap-[0.25em] text-3xl font-semibold tracking-tight hover:opacity-90 sm:text-5xl md:mt-20 md:text-7xl"
+          >
+            Let&apos;s talk
+            <ArrowUpRightIcon viewBox="6 6 12 12" className="h-[0.7em] w-[0.7em]" strokeWidth={1.5} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

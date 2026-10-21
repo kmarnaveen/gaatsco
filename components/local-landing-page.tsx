@@ -5,14 +5,12 @@ import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
 import { ArrowRightIcon, CheckCircleIcon, PhoneIcon } from "@/components/icons"
 import { hyderabad, type LocalService } from "@/lib/locations"
+import { CONSULTATION_CTA, PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact"
 import Link from "next/link"
-
-const PHONE_DISPLAY = "+91 86392 95812"
-const PHONE_TEL = "+918639295812"
+import { BookConsultation } from "@/components/book-consultation"
 
 export function LocalLandingPage({ service }: { service: LocalService }) {
   const office = hyderabad.office
-  const contactHref = `/contact?service=${encodeURIComponent(service.contactService)}`
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -42,12 +40,12 @@ export function LocalLandingPage({ service }: { service: LocalService }) {
                   {service.intro}
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <Link href={contactHref}>
+                  <BookConsultation>
                     <Button size="lg" className="w-full shadow-md shadow-primary/25 sm:w-auto">
-                      Book a free consultation
+                      {CONSULTATION_CTA}
                       <ArrowRightIcon className="ml-2 h-4 w-4" />
                     </Button>
-                  </Link>
+                  </BookConsultation>
                   <a href={`tel:${PHONE_TEL}`}>
                     <Button size="lg" variant="outline" className="w-full sm:w-auto">
                       <PhoneIcon className="mr-2 h-4 w-4" />
@@ -132,18 +130,18 @@ export function LocalLandingPage({ service }: { service: LocalService }) {
               Talk to a {hyderabad.name} specialist
             </h2>
             <p className="mb-8 text-muted-foreground">
-              Book a free, no-obligation 30-minute consultation. We usually reply within 24 hours.
+              Book a no-obligation 30-minute consultation. We usually reply within 24 hours.
             </p>
-            <Link href={contactHref}>
+            <BookConsultation>
               <Button size="lg" className="shadow-md shadow-primary/20">
-                Book a consultation
+                {CONSULTATION_CTA}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </BookConsultation>
           </div>
         </section>
 
-        <CTA />
+        <CTA defaultService={service.contactService} />
       </main>
       <Footer />
     </div>

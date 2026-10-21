@@ -36,7 +36,7 @@ export const hyderabadServices: LocalService[] = [
     slug: "tax-consultant",
     title: "Tax Consultant in Hyderabad | GAATSCO",
     description:
-      "Looking for a tax consultant in Hyderabad? GAATSCO handles income tax filing, GST, TDS, and tax planning for individuals and businesses in Hyderabad. Book a free consultation.",
+      "Looking for a tax consultant in Hyderabad? GAATSCO handles income tax filing, GST, TDS, and tax planning for individuals and businesses in Hyderabad. Book a 30-minute consultation.",
     heading: "Tax Consultant in Hyderabad",
     shortName: "Tax Consultant",
     intro:
@@ -76,7 +76,7 @@ export const hyderabadServices: LocalService[] = [
     slug: "gst-registration",
     title: "GST Registration in Hyderabad | GAATSCO",
     description:
-      "Fast, hassle-free GST registration in Hyderabad plus ongoing GST return filing and compliance for businesses across Telangana. Talk to GAATSCO's GST experts.",
+      "Quick GST registration in Hyderabad plus ongoing GST return filing and compliance for businesses across Telangana. Talk to GAATSCO's GST experts.",
     heading: "GST Registration & Filing in Hyderabad",
     shortName: "GST Registration",
     intro:

@@ -2,6 +2,8 @@ import { SectionLabel } from "@/components/section-label"
 import { JsonLd, faqSchema } from "@/components/structured-data"
 import { faqs } from "@/lib/faqs"
 import { PlusIcon } from "@/components/icons"
+import { whatsappHref } from "@/lib/contact"
+import { BookConsultation } from "@/components/book-consultation"
 
 export function Faq() {
   return (
@@ -34,6 +36,23 @@ export function Faq() {
             </details>
           ))}
         </div>
+
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Question not answered?{" "}
+          <a
+            href={whatsappHref("Hi GAATSCO, I have a question.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary underline underline-offset-4"
+          >
+            WhatsApp us
+          </a>{" "}
+          or{" "}
+          <BookConsultation className="font-semibold text-primary underline underline-offset-4">
+            book a 30-minute consultation
+          </BookConsultation>
+          .
+        </p>
       </div>
     </section>
   )

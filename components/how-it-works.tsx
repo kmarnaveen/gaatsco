@@ -1,32 +1,27 @@
 import { CalendarIcon, FileSearchIcon, CheckCircleIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { SectionLabel } from "@/components/section-label"
-import Link from "next/link"
+import { CONSULTATION_CTA } from "@/lib/contact"
+import { BookConsultation } from "@/components/book-consultation"
 
 const steps = [
   {
     step: "01",
     icon: CalendarIcon,
     title: "Book a call",
-    description:
-      "Share your situation in a relaxed 15-minute chat. No jargon, no pressure — just an honest conversation about what you need.",
-    reassurance: "Takes less than 2 minutes to schedule",
+    description: "A relaxed 30-minute chat about what you need. No jargon, no pressure.",
   },
   {
     step: "02",
     icon: FileSearchIcon,
     title: "Get a clear plan",
-    description:
-      "We outline exactly what we'll handle, when, and at what cost. You'll know what to expect before anything begins.",
-    reassurance: "Transparent pricing, no surprises",
+    description: "What we'll handle, when, and what it costs — agreed before we start.",
   },
   {
     step: "03",
     icon: CheckCircleIcon,
     title: "Relax — we've got it",
-    description:
-      "We take care of compliance, filings, and reporting. You get peace of mind and more time to focus on what you love.",
-    reassurance: "Proactive updates, not last-minute panic",
+    description: "We handle filings, compliance, and reporting — and keep you updated.",
   },
 ]
 
@@ -40,7 +35,7 @@ export function HowItWorks() {
             Getting started is easy
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-muted-foreground md:text-lg">
-            We know finances can feel overwhelming. That&apos;s why we keep things simple — three steps to peace of mind.
+            Three steps to peace of mind.
           </p>
         </div>
 
@@ -63,10 +58,9 @@ export function HowItWorks() {
                     </div>
                   </div>
                   <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                  <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
                     {item.description}
                   </p>
-                  <p className="text-xs font-medium text-primary">{item.reassurance}</p>
                 </div>
               </div>
             )
@@ -74,13 +68,13 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/contact">
+          <BookConsultation>
             <Button size="lg" className="shadow-md shadow-primary/20">
-              Start with a consultation
+              {CONSULTATION_CTA}
             </Button>
-          </Link>
+          </BookConsultation>
           <p className="mt-3 text-sm text-muted-foreground">
-            No commitment · Cancel anytime before we begin
+            No obligation. You agree the scope and fee before any work starts.
           </p>
         </div>
       </div>
